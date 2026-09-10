@@ -224,22 +224,24 @@ clears the flag and restores the form.
 Deep-green band, centered:
 
 - **PRANA PARTY** (serif caps) · *Breathe. Connect. Celebrate.* (gold script)
-- small gap → label **BROUGHT TO YOU BY** → two small transparent logos side by side on
-  the green, split by a faint cream hairline (`.footer__partners`, no panel)
+- small gap → label **BROUGHT TO YOU BY** → two transparent logos side by side on the
+  green, split by a faint cream hairline (`.footer__partners`, no panel). Both matched
+  at ~74px tall on desktop (58 tablet, 48 small); divider hides ≤440px.
 - *© 2026 Prana Party • JoinPranaParty.com*
 
 - **@ Bliss Foundation** — `images/atbliss-foundation-logo.png` (white text + gold mark,
   transparent). It is the link: `https://www.atbliss.org/`, new tab,
   `rel="noopener noreferrer"`, `alt="@ Bliss Foundation"`,
-  `aria-label="@ Bliss Foundation (opens in a new tab)"`. ~38px tall.
-- **Love Your Wellth** — `images/love-your-wellth-logo.png` (circular emblem, ~58px
-  tall). Built from the supplied transparent logo; its navy text was **lightened to
-  cream** so it reads on the green (gold wreath/tagline untouched, transparency kept).
+  `aria-label="@ Bliss Foundation (opens in a new tab)"`.
+- **Love Your Wellth** — `images/love-your-wellth-logo.png` (true RGBA PNG — do not
+  palette-quantize, it leaves a matte). Built from the supplied transparent logo; its
+  navy text was **lightened to cream** so it reads on the green (gold wreath/tagline
+  untouched, transparency kept).
   Currently a non-linked `<img>` — **no URL supplied**; make it an `<a>` (new tab) when
   one is given. Originals in `images/source/` (`love-your-wellth-logo-original.png`,
   `love-your-wellth-logo_Transparent-original.png`).
 
-Row wraps on narrow screens; divider hides ≤440px. No overflow at 320px.
+No overflow at 320px.
 
 ## 10. Preparation page (`prepare/index.html`, served at `/prepare/`)
 
