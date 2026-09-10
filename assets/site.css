@@ -151,7 +151,7 @@ a{color:var(--gold-deep)}
 }
 .hero__come{
   font-family:"Sacramento",cursive;
-  font-size:1.7rem;
+  font-size:1.87rem;
   color:var(--gold-deep);
   line-height:1;
 }
@@ -170,7 +170,7 @@ a{color:var(--gold-deep)}
 .lede p{margin:0 auto .6em;max-width:60ch}
 .lede .accent{
   font-family:"Sacramento",cursive;
-  font-size:1.7rem;color:var(--gold-deep);
+  font-size:1.96rem;color:var(--gold-deep);
   display:block;margin-top:.3em;
 }
 .prose{max-width:620px;margin:0 auto;text-align:center}
@@ -572,19 +572,19 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
   font-family:"Cormorant Garamond",serif;
   text-transform:uppercase;
   letter-spacing:.32em;
-  font-size:1.3rem;
+  font-size:1.56rem;
   margin:0 0 12px;
   color:var(--cream);
 }
 .footer__tag{
   font-family:"Sacramento",cursive;
-  font-size:1.5rem;
+  font-size:1.8rem;
   color:var(--gold);
   margin:0 0 34px;
 }
 .footer__attribution{margin:0 0 32px}
 .footer__by{
-  font-size:.7rem;
+  font-size:.77rem;
   letter-spacing:.26em;
   text-transform:uppercase;
   font-weight:700;
