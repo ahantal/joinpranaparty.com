@@ -224,9 +224,9 @@ clears the flag and restores the form.
 Deep-green band, centered:
 
 - **PRANA PARTY** (serif caps) · *Breathe. Connect. Celebrate.* (gold script)
-- small gap → label **BROUGHT TO YOU BY** → two transparent logos side by side on the
-  green, split by a faint cream hairline (`.footer__partners`, no panel). Both matched
-  at ~74px tall on desktop (58 tablet, 48 small); divider hides ≤440px.
+- small gap → label **BROUGHT TO YOU BY** → the two partner logos side by side on the
+  green (`.footer__partners`, no panel, no divider). Both source files are 109px tall
+  (user-sized); CSS matches them on height (109 desktop, 86 tablet, 70 small).
 - *© 2026 Prana Party • JoinPranaParty.com*
 
 - **@ Bliss Foundation** — `images/atbliss-foundation-logo.png` (white text + gold mark,
