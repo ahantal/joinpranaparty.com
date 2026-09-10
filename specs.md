@@ -68,9 +68,8 @@ README.md · specs.md · .gitignore
 images/
   experience-prana-party.jpg   Wide experiential photo below the hero (from Hero-parana-party-2.jpeg)
   prana-party-social.jpg       1200×630 social-share card (event info; generated)
-  atbliss-foundation-logo-dark.png  @ Bliss Foundation footer logo — black text + gold mark, transparent
-  atbliss-foundation-logo.png  Earlier white-text @ Bliss variant — no longer used
-  love-your-wellth-logo.jpg    "Love Your Wellth" partner logo in the footer panel (cream bg)
+  atbliss-foundation-logo.png  @ Bliss Foundation footer logo — white text + gold mark, transparent
+  love-your-wellth-logo.png    "Love Your Wellth" footer logo — transparent, navy text lightened to cream
   hero-prana-party.jpg         Old promo banner — no longer shown on the page
   host-luisa-fernanda.jpg / host-ali-hantal.jpg   Host portraits
   source/                      Originals kept for reference (not served)
@@ -225,24 +224,22 @@ clears the flag and restores the form.
 Deep-green band, centered:
 
 - **PRANA PARTY** (serif caps) · *Breathe. Connect. Celebrate.* (gold script)
-- small gap → label **BROUGHT TO YOU BY** → a compact cream (`#f5f1e8`) rounded
-  **partner panel** holding two logos side by side, split by a hairline divider
+- small gap → label **BROUGHT TO YOU BY** → two small transparent logos side by side on
+  the green, split by a faint cream hairline (`.footer__partners`, no panel)
 - *© 2026 Prana Party • JoinPranaParty.com*
 
-The cream panel is used because the Love Your Wellth logo (navy text) needs a light
-background; it's kept small and understated, not a sponsorship banner.
+- **@ Bliss Foundation** — `images/atbliss-foundation-logo.png` (white text + gold mark,
+  transparent). It is the link: `https://www.atbliss.org/`, new tab,
+  `rel="noopener noreferrer"`, `alt="@ Bliss Foundation"`,
+  `aria-label="@ Bliss Foundation (opens in a new tab)"`. ~38px tall.
+- **Love Your Wellth** — `images/love-your-wellth-logo.png` (circular emblem, ~58px
+  tall). Built from the supplied transparent logo; its navy text was **lightened to
+  cream** so it reads on the green (gold wreath/tagline untouched, transparency kept).
+  Currently a non-linked `<img>` — **no URL supplied**; make it an `<a>` (new tab) when
+  one is given. Originals in `images/source/` (`love-your-wellth-logo-original.png`,
+  `love-your-wellth-logo_Transparent-original.png`).
 
-- **@ Bliss Foundation** — `images/atbliss-foundation-logo-dark.png` (black text + gold
-  mark, transparent; from `AtBlissLogo_Black_Background.png`). It is the link:
-  `https://www.atbliss.org/`, new tab, `rel="noopener noreferrer"`,
-  `alt="@ Bliss Foundation"`, `aria-label="@ Bliss Foundation (opens in a new tab)"`.
-- **Love Your Wellth** — `images/love-your-wellth-logo.jpg` (circular emblem, "LOVE YOUR
-  WELLLTH" + *Replenish the well within*, on its own matching cream). Currently a
-  non-linked `<img>` — **no URL supplied**; make it an `<a>` (new tab) when one is given.
-
-Panel wraps on narrow screens; divider hides ≤460px. No overflow at 320px. Both logos
-used unmodified (Love Your Wellth is only cropped/resized; original kept in
-`images/source/Replenish-the-wellth-logo-cropped.png`).
+Row wraps on narrow screens; divider hides ≤440px. No overflow at 320px.
 
 ## 10. Preparation page (`prepare/index.html`, served at `/prepare/`)
 
@@ -327,4 +324,5 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-10 | Footer: "Brought to you by" + clickable @ Bliss Foundation logo. |
 | 2026-09-10 | Major update: shared `site.css`; Soma+IQ note; "Come as you are →" link; What to Expect; hosts intention line; longer health release; post-registration confirmation with Zoom + Google/Apple/Outlook calendar; `prana-party.ics`; new `/prepare/` page; 1200×630 social image; metadata refresh; `utm_source=chatgpt.com` stripped from Zoom & @ Bliss links. |
 | 2026-09-10 | `/prepare/`: "Set Up Your Camera" merged into "What You'll Need" as a full-width horizontal 5th box; its own section removed. |
-| 2026-09-10 | `/prepare/`: "don't eat" window changed 2 hours → 1 hour. Footer: added "Love Your Wellth" logo beside @ Bliss in a cream partner panel; @ Bliss switched to the black-text variant for contrast on the panel. |
+| 2026-09-10 | `/prepare/`: "don't eat" window changed 2 hours → 1 hour. |
+| 2026-09-10 | Footer partner logos reworked: dropped the cream panel; @ Bliss back to the white-text transparent logo; Love Your Wellth from the supplied transparent version with its navy text lightened to cream; both small, side by side on the green. |
