@@ -1,48 +1,57 @@
-# Prana Party — Landing Page
+# Prana Party — Website
 
-A single-page, static landing site for the first **Prana Party**, a free virtual
-breathwork gathering hosted by **Luisa Fernanda** and **Ali C. Hantal**.
+Static two-page site for the first **Prana Party**, a free virtual Soma+IQ™ breathwork
+gathering hosted by **Luisa Fernanda** and **Ali C. Hantal**, brought to you by
+**@ Bliss Foundation**.
 
 **Event:** Friday, September 18, 2026 · 5:30 PM to 7:30 PM EDT · Online · Free · All levels welcome
+
+`specs.md` is the full living specification — read it first.
 
 ## Files
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | The entire page — markup, styles, and JS are inline. No build step. |
-| `specs.md` | Full site specification — content, form contract, design tokens, open items. Keep it current. |
-| `images/experience-prana-party.jpg` | Wide experiential photo shown below the hero. |
-| `images/atbliss-foundation-logo.png` | @ Bliss Foundation logo in the footer (links to atbliss.org). |
-| `images/hero-prana-party.jpg` | Old promo banner — now only the social (og:/twitter:) preview image. |
-| `images/host-luisa-fernanda.jpg`, `images/host-ali-hantal.jpg` | Host portraits. |
-| `images/source/` | Original supplied graphics kept for reference (not served). |
-| `CNAME` | Custom domain for GitHub Pages (`joinpranaparty.com`). |
+| `index.html` | Landing page. One inline `<script>` (registration + calendar logic). |
+| `prepare/index.html` | Preparation page, served at `/prepare/`. |
+| `assets/site.css` | Shared styles for both pages — design tokens + all components. |
+| `prana-party.ics` | Calendar file for "Add to Apple Calendar" (embeds the Zoom URL). |
+| `specs.md` | Full site specification. Keep it current. |
+| `images/experience-prana-party.jpg` | Wide experiential photo below the hero. |
+| `images/prana-party-social.jpg` | 1200×630 social-share card (og:/twitter: image). |
+| `images/atbliss-foundation-logo.png` | @ Bliss Foundation footer logo (links to atbliss.org). |
+| `images/host-*.jpg` | Host portraits. |
+| `images/hero-prana-party.jpg` | Old promo banner — no longer shown. |
+| `images/source/` | Original supplied graphics (not served). |
+| `CNAME` | Custom domain for GitHub Pages. |
 
-## Registration form (Web3Forms)
+## Registration (Web3Forms)
 
-The form posts to `https://api.web3forms.com/submit`. The Web3Forms `access_key`
-is set in the hidden input near the top of the `<form>` in `index.html` — swap it
-there if the destination inbox ever changes.
+Posts JSON to `https://api.web3forms.com/submit`. `access_key` is in the hidden input
+near the top of the `<form>` in `index.html`. Fields: `first_name`, `last_name`,
+`email`, `mobile_phone`, `participant_release` (`Agreed`), hidden `subject` /
+`from_name`, and a `botcheck` honeypot. Client-side validation → `Joining…` state →
+duplicate-submit guard → on success the form is replaced by the confirmation panel
+(Zoom button + Google/Apple/Outlook calendar + prepare link) and a
+`pranaPartyRegistered` localStorage flag keeps that panel on return visits until the
+event passes.
 
-Submitted fields: `first_name`, `last_name`, `email`, `mobile_phone`, plus a hidden
-`subject` of `Prana Party Registration - September 18, 2026` and a `botcheck`
-honeypot for spam protection.
+## Zoom link
 
-The form validates required fields and email format on the client, shows a
-`Joining…` loading state, prevents duplicate submissions, replaces itself with a
-success message on completion, and shows an inline error message if the request
-fails.
+Not present in the landing-page HTML (base64 in the script, written to hrefs only after
+registration). It is deliberately reachable via `/prana-party.ics` and `/prepare/` —
+see `specs.md` §7.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or serve the folder:
+Serve from the repo root so absolute paths resolve:
 
 ```bash
 python3 -m http.server 8000
+# http://localhost:8000/  and  http://localhost:8000/prepare/
 ```
 
 ## Deployment (GitHub Pages)
 
-1. Push to `https://github.com/ahantal/joinpranaparty.com`.
-2. Repo **Settings → Pages** → deploy from the default branch, root.
-3. Point the `joinpranaparty.com` DNS at GitHub Pages; the `CNAME` file is already in place.
+Push to `main`. **Settings → Pages** deploys from `main` / root; `CNAME` keeps the
+domain. `/prepare` 301s to `/prepare/`; `.ics` serves as `text/calendar`.
