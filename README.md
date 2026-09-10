@@ -17,13 +17,9 @@ breathwork gathering hosted by **Luisa Fernanda** and **Ali Hantal**.
 
 ## Registration form (Web3Forms)
 
-The form posts to `https://api.web3forms.com/submit`.
-
-**Before going live, replace the placeholder access key** in `index.html`:
-
-```html
-<input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-```
+The form posts to `https://api.web3forms.com/submit`. The Web3Forms `access_key`
+is set in the hidden input near the top of the `<form>` in `index.html` — swap it
+there if the destination inbox ever changes.
 
 Submitted fields: `first_name`, `last_name`, `email`, `mobile_phone`, plus a hidden
 `subject` of `Prana Party Registration - September 18, 2026` and a `botcheck`
