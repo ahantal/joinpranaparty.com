@@ -602,15 +602,15 @@ a{color:var(--gold-deep)}
 a.footer__partner:hover{opacity:.7}
 a.footer__partner:focus-visible{outline:2px solid var(--gold-deep);outline-offset:4px}
 .footer__partner img{width:auto;height:52px}
-.footer__partner--badge img{height:74px}
+.footer__partner--badge img{height:84px}
 .footer__partners-div{
   width:1px;align-self:stretch;
   background:rgba(61,74,50,.22);
-  margin:6px 0;
+  margin:8px 0;
 }
 @media (max-width:460px){
   .footer__partner img{height:44px}
-  .footer__partner--badge img{height:62px}
+  .footer__partner--badge img{height:70px}
   .footer__partners-div{display:none}
 }
 .footer__copy{font-size:.82rem;letter-spacing:.08em;opacity:.65;margin:0;line-height:1.7}
