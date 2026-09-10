@@ -1,7 +1,7 @@
 # Prana Party — Landing Page
 
 A single-page, static landing site for the first **Prana Party**, a free virtual
-breathwork gathering hosted by **Luisa Fernanda** and **Ali Hantal**.
+breathwork gathering hosted by **Luisa Fernanda** and **Ali C. Hantal**.
 
 **Event:** Friday, September 18, 2026 · 5:30 PM to 7:30 PM EDT · Online · Free · All levels welcome
 

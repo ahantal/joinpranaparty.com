@@ -30,7 +30,11 @@ not commercial, not corporate SaaS.
 | Location | Online |
 | Price | Free |
 | Level | All levels welcome |
-| Hosts | Luisa Fernanda · Ali Hantal |
+| Hosts | Luisa Fernanda · Ali C. Hantal |
+
+Host names are always written in full: **Luisa Fernanda** and **Ali C. Hantal**
+(never "Ali Hantal"). The hero graphic has "ALI HANTAL" baked into the image and
+cannot be edited without re-exporting the artwork.
 
 Date/time string is used **verbatim and consistently** everywhere on the page.
 The supplied promo graphics mention a monthly "third Friday" cadence — this is
@@ -80,7 +84,7 @@ In document order:
    - *Who is it for?:* Everyone — breathwork-curious or seasoned. *"Come as you are."*
 4. **Event highlight** — deep-green full-bleed band: date, time, pills
    (Online / Free / All Levels Welcome), secondary CTA *"Reserve My Spot"*.
-5. **Your Hosts** — eyebrow, *"Luisa Fernanda & Ali Hantal"*, two square portraits with
+5. **Your Hosts** — eyebrow, *"Luisa Fernanda & Ali C. Hantal"*, two square portraits with
    script name captions. No bios or credentials (do not invent any).
 6. **Registration** (`#register`) — see [§6](#6-registration-form).
 7. **Footer** — *PRANA PARTY*, *Breathe. Connect. Celebrate.*, *© 2026 Prana Party · JoinPranaParty.com*.
@@ -184,7 +188,7 @@ breathwork experience, newsletter checkbox, marketing consent.
 
 - `<title>`: **Prana Party | Free Virtual Breathwork Gathering**
 - Meta description: *Join Prana Party, a free virtual breathwork gathering with Luisa
-  Fernanda and Ali Hantal. Friday, September 18, 2026 from 5:30 PM to 7:30 PM EDT. All
+  Fernanda and Ali C. Hantal. Friday, September 18, 2026 from 5:30 PM to 7:30 PM EDT. All
   levels welcome.*
 - Open Graph + Twitter card tags set (title, description, `og:image` = hero image,
   `og:url` = `https://joinpranaparty.com/`).
@@ -220,3 +224,4 @@ Attribution for commits: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com
 | 2026-09-10 | Web3Forms access key added. |
 | 2026-09-10 | Registration switched to JSON submission (Web3Forms canonical client-side spec). |
 | 2026-09-10 | Added `specs.md`. |
+| 2026-09-10 | Host name updated to "Ali C. Hantal" across all page copy, alt text, and metadata. |
