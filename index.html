@@ -292,6 +292,51 @@
   }
   .field input:user-invalid{border-color:#b5502f}
 
+  /* ---- Participant acknowledgment & release ---- */
+  .release{
+    margin:4px 0 20px;
+    padding:18px 18px 16px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:var(--paper);
+  }
+  .release__title{
+    font-weight:700;
+    font-size:.82rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--green);
+    margin:0 0 8px;
+  }
+  .release__body{
+    font-size:.82rem;
+    line-height:1.7;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .release__body p{margin:0 0 .7em}
+  .release__body p:last-child{margin-bottom:0}
+  .release__check{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin-top:14px;
+    padding-top:14px;
+    border-top:1px solid var(--line);
+    font-size:.82rem;
+    line-height:1.55;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  .release__check input{
+    flex:0 0 auto;
+    width:18px;height:18px;
+    margin:1px 0 0;
+    accent-color:var(--green);
+    cursor:pointer;
+  }
+  .release__check input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
   .form-status{
     margin:16px 0 0;
     padding:14px 16px;
@@ -519,6 +564,18 @@
           <input type="tel" id="mobile_phone" name="mobile_phone" autocomplete="tel" inputmode="tel">
         </div>
 
+        <div class="release">
+          <p class="release__title">Participant Acknowledgment &amp; Release</p>
+          <div class="release__body">
+            <p>By participating in Prana Party, I understand that breathwork is a voluntary wellness practice that may involve physical, mental, or emotional experiences. I take responsibility for my own well-being and agree to listen to my body, participate within my own limits, and stop at any time if I feel uncomfortable.</p>
+            <p>I understand that Prana Party and its facilitators do not provide medical, psychological, or therapeutic treatment. I voluntarily assume responsibility for my participation and release <strong>Luisa Fernanda, Ali C. Hantal, Prana Party, and its facilitators and organizers</strong> from claims arising from my voluntary participation, to the extent permitted by law.</p>
+          </div>
+          <label class="release__check" for="participant_release">
+            <input type="checkbox" id="participant_release" name="participant_release" value="Agreed" required>
+            <span>I have read, understand, and agree to the Participant Acknowledgment &amp; Release above. <span aria-hidden="true">*</span></span>
+          </label>
+        </div>
+
         <button type="submit" class="btn btn--gold btn--block" id="submit-btn">Join the Prana Party</button>
 
         <p class="form-status form-status--error" id="form-status" role="alert" hidden></p>
@@ -591,6 +648,11 @@
       if(!emailRe.test(email)){
         showError('Please enter a valid email address.');
         form.email.focus();
+        return;
+      }
+      if(!form.participant_release.checked){
+        showError('Please confirm that you have read and agree to the Participant Acknowledgment & Release before joining.');
+        form.participant_release.focus();
         return;
       }
 

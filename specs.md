@@ -122,7 +122,7 @@ Both CTAs smooth-scroll to `#register` and move focus to the First Name field
 **Sub:** *Reserve your spot for our free virtual breathwork gathering on Friday, September 18.*
 **Above fields:** *Fields marked with \* are required.*
 
-### Fields (this list is exhaustive — add nothing)
+### Fields (this list is exhaustive — add no personal-info fields)
 
 | Label | `name` | Type | Required | Notes |
 | --- | --- | --- | --- | --- |
@@ -130,9 +130,30 @@ Both CTAs smooth-scroll to `#register` and move focus to the First Name field
 | Last Name * | `last_name` | text | Yes | `autocomplete="family-name"` |
 | Email * | `email` | email | Yes | must validate as an email address |
 | Mobile Phone Number | `mobile_phone` | tel | No | labelled "(optional)" |
+| Participant Acknowledgment & Release * | `participant_release` | checkbox | Yes | value `Agreed`; never pre-checked; see below |
 
 **Explicitly excluded:** address, city, birthday, time zone, gender, comments/message,
 breathwork experience, newsletter checkbox, marketing consent.
+
+### Participant Acknowledgment & Release
+
+Sits **between the Mobile Phone field and the submit button**, in a subtly bordered
+`--paper` box (`.release`) with smaller (~0.82rem) but readable text and generous
+line spacing — integrated into the form, not a legal wall.
+
+- **Title:** *Participant Acknowledgment & Release*
+- **Body (two paragraphs):** voluntary wellness practice / take responsibility for own
+  well-being / no medical, psychological, or therapeutic treatment / releases
+  **Luisa Fernanda, Ali C. Hantal, Prana Party, and its facilitators and organizers**
+  from claims arising from voluntary participation, to the extent permitted by law.
+  (Full wording lives in `index.html`.)
+- **Required checkbox**, asterisked, not pre-checked:
+  *"I have read, understand, and agree to the Participant Acknowledgment & Release above. \*"*
+- Submitting is blocked until it is checked. Failure message:
+  *"Please confirm that you have read and agree to the Participant Acknowledgment &
+  Release before joining."*
+- On a valid submission the checkbox contributes `participant_release=Agreed` to the
+  Web3Forms payload, recording consent.
 
 ### Hidden inputs
 
@@ -152,8 +173,9 @@ breathwork experience, newsletter checkbox, marketing consent.
 ### Behaviour
 
 1. `submit` is intercepted (`novalidate` on the form; JS owns validation).
-2. Client-side checks: all three required fields non-empty; email matches
-   `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`. Failures show an inline message, no request sent.
+2. Client-side checks, in order: all three required text fields non-empty; email matches
+   `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`; the Participant Acknowledgment & Release checkbox is
+   checked. Any failure shows an inline message, no request sent.
 3. Request: `POST https://api.web3forms.com/submit`, `Content-Type: application/json`,
    `Accept: application/json`, body = JSON object of all form fields.
 4. **Success** (`response.ok && data.success`): form is hidden, the success panel is
@@ -227,3 +249,4 @@ Attribution for commits: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com
 | 2026-09-10 | Added `specs.md`. |
 | 2026-09-10 | Host name updated to "Ali C. Hantal" across all page copy, alt text, and metadata. |
 | 2026-09-10 | Hero descriptor changed to "A Free Virtual Soma+IQ™ Breathwork Gathering". |
+| 2026-09-10 | Added Participant Acknowledgment & Release block + required `participant_release` checkbox above the submit button. |
