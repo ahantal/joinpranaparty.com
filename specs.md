@@ -24,7 +24,7 @@ not commercial, not corporate SaaS.
 | Field | Value |
 | --- | --- |
 | Name | **PRANA PARTY** |
-| Descriptor | A Free Virtual Breathwork Gathering |
+| Descriptor | A Free Virtual Soma+IQ™ Breathwork Gathering (hero line). Meta descriptions and the hero image still read "A Free Virtual Breathwork Gathering". |
 | Date | **Friday, September 18, 2026** |
 | Time | **5:30 PM to 7:30 PM EDT** |
 | Location | Online |
@@ -72,7 +72,8 @@ images/
 
 In document order:
 
-1. **Hero** — logo wordmark, descriptor, date/time/format lines, primary CTA
+1. **Hero** — logo wordmark, descriptor (*"A Free Virtual Soma+IQ™ Breathwork Gathering"*),
+   date/time/format lines, primary CTA
    *"Join the Prana Party"*, script line *"Come breathe with us."*, then the hero
    banner image. Centered layout.
 2. **What is it?** — sun motif, eyebrow, large statement:
@@ -225,3 +226,4 @@ Attribution for commits: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com
 | 2026-09-10 | Registration switched to JSON submission (Web3Forms canonical client-side spec). |
 | 2026-09-10 | Added `specs.md`. |
 | 2026-09-10 | Host name updated to "Ali C. Hantal" across all page copy, alt text, and metadata. |
+| 2026-09-10 | Hero descriptor changed to "A Free Virtual Soma+IQ™ Breathwork Gathering". |
