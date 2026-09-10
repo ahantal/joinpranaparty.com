@@ -10,6 +10,7 @@ breathwork gathering hosted by **Luisa Fernanda** and **Ali Hantal**.
 | Path | Purpose |
 | --- | --- |
 | `index.html` | The entire page — markup, styles, and JS are inline. No build step. |
+| `specs.md` | Full site specification — content, form contract, design tokens, open items. Keep it current. |
 | `images/hero-prana-party.jpg` | Hero banner (from the Prana Party promotional graphic). |
 | `images/host-luisa-fernanda.jpg`, `images/host-ali-hantal.jpg` | Host portraits. |
 | `images/source/` | Original promotional graphics kept for reference (not used by the page). |
