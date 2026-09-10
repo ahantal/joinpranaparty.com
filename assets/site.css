@@ -367,6 +367,9 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 .highlight__time{
   font-weight:700;font-size:1.15rem;letter-spacing:.02em;margin:0 0 26px;
 }
+.highlight__note{
+  font-size:.9rem;letter-spacing:.02em;opacity:.72;margin:14px 0 0;
+}
 .highlight__pills{
   display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:0 0 36px;
 }
