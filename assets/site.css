@@ -572,19 +572,19 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
   font-family:"Cormorant Garamond",serif;
   text-transform:uppercase;
   letter-spacing:.32em;
-  font-size:1.3rem;
+  font-size:1.72rem;
   margin:0 0 12px;
   color:var(--cream);
 }
 .footer__tag{
   font-family:"Sacramento",cursive;
-  font-size:1.5rem;
+  font-size:1.8rem;
   color:var(--gold);
   margin:0 0 34px;
 }
 .footer__attribution{margin:0 0 32px}
 .footer__by{
-  font-size:.7rem;
+  font-size:.77rem;
   letter-spacing:.26em;
   text-transform:uppercase;
   font-weight:700;
@@ -592,10 +592,6 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
   opacity:.55;
   margin:0 0 16px;
 }
-/* Home page only: larger footer type */
-.home .footer__logo{font-size:1.72rem}
-.home .footer__tag{font-size:1.8rem}
-.home .footer__by{font-size:.77rem}
 .footer__partners{
   display:flex;
   align-items:center;
