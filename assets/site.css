@@ -231,6 +231,13 @@ a{color:var(--gold-deep)}
   font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
   color:var(--ink-soft);margin-top:9px;
 }
+a.come-sub{
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .18s,border-color .18s;
+}
+a.come-sub:hover{color:var(--gold-deep);border-color:var(--gold-deep)}
+a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 
 /* ---- Stages (What to expect) ---- */
 .stages{
