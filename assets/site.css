@@ -586,7 +586,8 @@ a{color:var(--gold-deep)}
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:clamp(18px,4vw,26px);
+  flex-wrap:wrap;
+  gap:clamp(18px,4vw,28px);
 }
 .footer__partner{
   display:inline-flex;
@@ -596,14 +597,15 @@ a{color:var(--gold-deep)}
 }
 a.footer__partner:hover{opacity:.72}
 a.footer__partner:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
-/* Sized by width so the two logos occupy roughly the same footprint
-   and the centred row actually looks centred. */
-.footer__partner img{width:92px;height:auto}
-.footer__partner--badge img{width:54px}
+/* Both source files are the same height, so match on height and they stay
+   balanced; scale down together on small screens. */
+.footer__partner img{height:109px;width:auto}
 .footer__partners-div{display:none}
-@media (max-width:360px){
-  .footer__partner img{width:80px}
-  .footer__partner--badge img{width:48px}
+@media (max-width:600px){
+  .footer__partner img{height:86px}
+}
+@media (max-width:400px){
+  .footer__partner img{height:70px}
 }
 .footer__copy{font-size:.82rem;letter-spacing:.08em;opacity:.65;margin:0;line-height:1.7}
 .footer__copy-sep{white-space:nowrap}
