@@ -11,9 +11,11 @@ breathwork gathering hosted by **Luisa Fernanda** and **Ali C. Hantal**.
 | --- | --- |
 | `index.html` | The entire page — markup, styles, and JS are inline. No build step. |
 | `specs.md` | Full site specification — content, form contract, design tokens, open items. Keep it current. |
-| `images/hero-prana-party.jpg` | Hero banner (from the Prana Party promotional graphic). |
+| `images/experience-prana-party.jpg` | Wide experiential photo shown below the hero. |
+| `images/atbliss-foundation-logo.png` | @ Bliss Foundation logo in the footer (links to atbliss.org). |
+| `images/hero-prana-party.jpg` | Old promo banner — now only the social (og:/twitter:) preview image. |
 | `images/host-luisa-fernanda.jpg`, `images/host-ali-hantal.jpg` | Host portraits. |
-| `images/source/` | Original promotional graphics kept for reference (not used by the page). |
+| `images/source/` | Original supplied graphics kept for reference (not served). |
 | `CNAME` | Custom domain for GitHub Pages (`joinpranaparty.com`). |
 
 ## Registration form (Web3Forms)

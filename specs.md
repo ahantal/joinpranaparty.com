@@ -59,10 +59,17 @@ README.md                       Contributor / deploy notes
 specs.md                        This file
 .gitignore                      .DS_Store, logs, node_modules
 images/
-  hero-prana-party.jpg          Hero banner (cropped from promo-main.png)
+  experience-prana-party.jpg    Experiential feature image below the hero (from Hero-parana-party-2.jpeg)
+  atbliss-foundation-logo.png   @ Bliss Foundation logo for the footer (white text + gold mark, transparent; from AtBlissLogo.png)
+  hero-prana-party.jpg          Old promo banner — now used only as the og:/twitter: social preview image
   host-luisa-fernanda.jpg       Host portrait (from promo-main.png)
   host-ali-hantal.jpg           Host portrait (from promo-main.png)
   source/
+    Hero-parana-party-2.jpeg    Original experiential photo (reference)
+    Hero-parana-party-3.png     Alternate experiential collage — not used
+    AtBlissLogo.png             Supplied @ Bliss Foundation logo, white text + gold mark (chosen)
+    AtBlissLogo_Background.png  Supplied variant, all gold
+    AtBlissLogo_Black_Background.png  Supplied variant, black text (needs light bg; unused)
     promo-main.png              Original promo graphic (reference; not served)
     IMG_7816.AVIF               Original brand graphic (reference; not served)
     IMG_7817.AVIF               Original brand graphic (reference; not served)
@@ -73,22 +80,36 @@ images/
 In document order:
 
 1. **Hero** — logo wordmark, descriptor (*"A Free Virtual Soma+IQ™ Breathwork Gathering"*),
-   date/time/format lines, primary CTA
-   *"Join the Prana Party"*, script line *"Come breathe with us."*, then the hero
-   banner image. Centered layout.
-2. **What is it?** — sun motif, eyebrow, large statement:
+   date/time/format lines, primary CTA *"Join the Prana Party"*, script line
+   *"Come breathe with us."*. Centered layout.
+2. **Experiential image** — one wide horizontal photo of several people doing breathwork
+   from their own homes (`.hero__figure`, max-width 920px, rounded corners, subtle
+   border + soft shadow, generous whitespace). Communicates *"separate spaces, one
+   shared breath"*. No text, overlay, caption, or logo on it.
+4. **What is it?** — sun motif, eyebrow, large statement:
    *"A free, virtual space to breathe, share, and celebrate the power of breath together."*
    → *"No experience is needed."* → *"Just you and your breath."* (script accent)
-3. **How it works / Who is it for?** — two-column feature band with line icons.
+5. **How it works / Who is it for?** — two-column feature band with line icons.
    - *How it works:* guided breathwork for clarity, connection, and vitality, then time
      to connect and share; accessible for first-timers and experienced breathers alike.
    - *Who is it for?:* Everyone — breathwork-curious or seasoned. *"Come as you are."*
-4. **Event highlight** — deep-green full-bleed band: date, time, pills
+6. **Event highlight** — deep-green full-bleed band: date, time, pills
    (Online / Free / All Levels Welcome), secondary CTA *"Reserve My Spot"*.
-5. **Your Hosts** — eyebrow, *"Luisa Fernanda & Ali C. Hantal"*, two square portraits with
+7. **Your Hosts** — eyebrow, *"Luisa Fernanda & Ali C. Hantal"*, two square portraits with
    script name captions. No bios or credentials (do not invent any).
-6. **Registration** (`#register`) — see [§6](#6-registration-form).
-7. **Footer** — *PRANA PARTY*, *Breathe. Connect. Celebrate.*, *© 2026 Prana Party · JoinPranaParty.com*.
+8. **Registration** (`#register`) — see [§6](#6-registration-form).
+9. **Footer** — deep-green band, centered:
+   - *PRANA PARTY* (serif caps) · *Breathe. Connect. Celebrate.* (gold script)
+   - small gap, then the label **BROUGHT TO YOU BY** (small uppercase, wide letter-spacing,
+     low-opacity cream) and the **@ Bliss Foundation** logo beneath it
+   - *© 2026 Prana Party • JoinPranaParty.com*
+   The @ Bliss Foundation logo (`images/atbliss-foundation-logo.png`, white text + gold
+   mark on transparent — best contrast on the green) is the whole clickable target:
+   links to `https://atbliss.org`, `target="_blank"`, `rel="noopener noreferrer"`,
+   `alt="@ Bliss Foundation"`, `aria-label="@ Bliss Foundation (opens in a new tab)"`.
+   Sized `min(196px, 58vw)` wide — visible but secondary to the Prana Party wordmark,
+   never in a white box, never overflowing. Always written **"@ Bliss Foundation"**
+   (not "At Bliss Foundation", "@Bliss Foundation", or "AtBliss").
 
 Both CTAs smooth-scroll to `#register` and move focus to the First Name field
 (respects `prefers-reduced-motion`).
@@ -213,7 +234,7 @@ line spacing — integrated into the form, not a legal wall.
 - Meta description: *Join Prana Party, a free virtual breathwork gathering with Luisa
   Fernanda and Ali C. Hantal. Friday, September 18, 2026 from 5:30 PM to 7:30 PM EDT. All
   levels welcome.*
-- Open Graph + Twitter card tags set (title, description, `og:image` = hero image,
+- Open Graph + Twitter card tags set (title, description, `og:image` = `hero-prana-party.jpg`,
   `og:url` = `https://joinpranaparty.com/`).
 - `<link rel="canonical">` → `https://joinpranaparty.com/`.
 - Inline SVG favicon (green rounded square, "P").
@@ -250,3 +271,5 @@ Attribution for commits: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com
 | 2026-09-10 | Host name updated to "Ali C. Hantal" across all page copy, alt text, and metadata. |
 | 2026-09-10 | Hero descriptor changed to "A Free Virtual Soma+IQ™ Breathwork Gathering". |
 | 2026-09-10 | Added Participant Acknowledgment & Release block + required `participant_release` checkbox above the submit button. |
+| 2026-09-10 | Replaced the promo image below the hero with the wide experiential breathwork photo; old promo kept only as the social preview image. |
+| 2026-09-10 | Footer: added "Brought to you by" + clickable @ Bliss Foundation logo (links to atbliss.org, new tab). |

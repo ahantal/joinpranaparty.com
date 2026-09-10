@@ -369,7 +369,7 @@
     background:var(--green-deep);
     color:var(--cream);
     text-align:center;
-    padding:56px 24px;
+    padding:54px 24px;
   }
   .footer__logo{
     font-family:"Cormorant Garamond",serif;
@@ -383,9 +383,32 @@
     font-family:"Sacramento",cursive;
     font-size:1.5rem;
     color:var(--gold);
-    margin:0 0 20px;
+    margin:0 0 34px;
   }
-  .footer__copy{font-size:.82rem;letter-spacing:.1em;opacity:.65;margin:0}
+  .footer__attribution{margin:0 0 32px}
+  .footer__by{
+    font-size:.7rem;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--cream);
+    opacity:.55;
+    margin:0 0 15px;
+  }
+  .footer__bliss{
+    display:inline-block;
+    line-height:0;
+    border-radius:8px;
+    transition:opacity .18s ease;
+  }
+  .footer__bliss:hover{opacity:.72}
+  .footer__bliss:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+  .footer__bliss img{
+    width:min(196px,58vw);
+    height:auto;
+  }
+  .footer__copy{font-size:.82rem;letter-spacing:.08em;opacity:.65;margin:0;line-height:1.7}
+  .footer__copy-sep{white-space:nowrap}
 
   /* ---- Responsive ---- */
   @media (max-width:820px){
@@ -418,9 +441,9 @@
       </div>
     </div>
     <figure class="hero__figure">
-      <img src="images/hero-prana-party.jpg"
-           alt="Prana Party — a free virtual breathwork gathering with hosts Luisa Fernanda and Ali C. Hantal"
-           width="1500" height="993" fetchpriority="high" decoding="async">
+      <img src="images/experience-prana-party.jpg"
+           alt="People taking part in Prana Party breathwork online, each from their own home — separate spaces, one shared breath"
+           width="1840" height="1027" fetchpriority="high" decoding="async">
     </figure>
   </div>
 </header>
@@ -597,7 +620,16 @@
 <footer class="footer">
   <p class="footer__logo">Prana Party</p>
   <p class="footer__tag">Breathe. Connect. Celebrate.</p>
-  <p class="footer__copy">&copy; 2026 Prana Party &nbsp;&bull;&nbsp; JoinPranaParty.com</p>
+
+  <div class="footer__attribution">
+    <p class="footer__by">Brought to you by</p>
+    <a class="footer__bliss" href="https://atbliss.org" target="_blank" rel="noopener noreferrer"
+       aria-label="@ Bliss Foundation (opens in a new tab)">
+      <img src="images/atbliss-foundation-logo.png" alt="@ Bliss Foundation" width="600" height="263" decoding="async">
+    </a>
+  </div>
+
+  <p class="footer__copy">&copy; 2026 Prana Party <span class="footer__copy-sep">&bull;&nbsp;JoinPranaParty.com</span></p>
 </footer>
 
 <script>
