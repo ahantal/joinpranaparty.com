@@ -242,21 +242,22 @@ visual system as the landing page, shared `site.css`, same footer. Minimal top b
 1. **Hero** — eyebrow *PREPARE FOR PRANA PARTY*, h1 *"A few simple things to know before
    we breathe together."*, date + time, script line *"Find a comfortable space. Bring
    your headphones. And come as you are."*
-2. **WHAT YOU'LL NEED** — 4 cards: A Comfortable Place to Lie Down · Headphones or
-   Earbuds · Zoom · A Quiet, Private Space.
+2. **WHAT YOU'LL NEED** — 4 cards (A Comfortable Place to Lie Down · Headphones or
+   Earbuds · Zoom · A Quiet, Private Space) followed by a full-width horizontal 5th
+   box **Set Up Your Camera** (`.card--wide`): lie on your back, frame upper
+   body/chest/belly so the facilitator can observe and guide live; emphasised line
+   *"Please turn off Zoom background blur, virtual backgrounds, and other camera
+   background effects before we begin."*
 3. **GIVE YOUR BODY SOME SPACE** — notice: *"Please don't eat anything for 2 hours
    before the session begins."* (warm, not alarming).
-4. **SET UP YOUR CAMERA** — lying on back; frame upper body/chest/belly so the
-   facilitator can observe and guide live; notice: *"Please turn off Zoom background
-   blur, virtual backgrounds, and other camera background effects before we begin."*
-5. **WHAT TO EXPECT** — 3 stages: **Arrive** (Introduction) · **Breathe** (Guided
+4. **WHAT TO EXPECT** — 3 stages: **Arrive** (Introduction) · **Breathe** (Guided
    Breathwork) · **Integrate** (Integration & Sharing). No 15/60/15 timing.
-6. **A FEW MINUTES BEFORE** — 7-item checklist, then *"Come as you are."* (script).
-7. **LISTEN TO YOUR BODY** — health reminder + link **"Review Participant Acknowledgment
+5. **A FEW MINUTES BEFORE** — 7-item checklist, then *"Come as you are."* (script).
+6. **LISTEN TO YOUR BODY** — health reminder + link **"Review Participant Acknowledgment
    & Health Precautions →"** to `/#acknowledgment` (release is not re-accepted here).
-8. **READY TO BREATHE?** — green band: date, *5:30 PM EDT*, **Join Prana Party on Zoom**
+7. **READY TO BREATHE?** — green band: date, *5:30 PM EDT*, **Join Prana Party on Zoom**
    button (raw Zoom URL, new tab).
-9. **QUESTIONS BEFORE WE BEGIN?** — *"If you're unsure about anything or have questions
+8. **QUESTIONS BEFORE WE BEGIN?** — *"If you're unsure about anything or have questions
    about preparing for the session, just reach out."* (no contact method invented).
 
 Content is based on the supplied Somatic Breathwork Session Prep document.
@@ -314,3 +315,4 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-10 | Swapped experiential image below the hero. |
 | 2026-09-10 | Footer: "Brought to you by" + clickable @ Bliss Foundation logo. |
 | 2026-09-10 | Major update: shared `site.css`; Soma+IQ note; "Come as you are →" link; What to Expect; hosts intention line; longer health release; post-registration confirmation with Zoom + Google/Apple/Outlook calendar; `prana-party.ics`; new `/prepare/` page; 1200×630 social image; metadata refresh; `utm_source=chatgpt.com` stripped from Zoom & @ Bliss links. |
+| 2026-09-10 | `/prepare/`: "Set Up Your Camera" merged into "What You'll Need" as a full-width horizontal 5th box; its own section removed. |

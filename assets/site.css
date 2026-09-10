@@ -280,8 +280,34 @@ a{color:var(--gold-deep)}
   color:var(--green);margin:0 0 .55em;
 }
 .card p{margin:0;font-size:.94rem;color:var(--ink-soft);line-height:1.6}
+
+/* Full-width horizontal card (e.g. "Set Up Your Camera") */
+.card--wide{
+  grid-column:1 / -1;
+  text-align:left;
+  display:grid;
+  grid-template-columns:minmax(0,210px) 1fr;
+  gap:clamp(14px,3vw,40px);
+  align-items:center;
+  padding:clamp(24px,3vw,34px) clamp(24px,3.5vw,40px);
+}
+.card--wide h3{margin:0}
+.card--wide .card__body{margin:0}
+.card--wide .card__body p{margin:0 0 .7em;font-size:.94rem;color:var(--ink-soft);line-height:1.6}
+.card--wide .card__body p:last-child{margin-bottom:0}
+.card--wide .card__note{
+  margin-top:.9em;
+  font-weight:700;
+  color:var(--green);
+}
 @media (min-width:920px){.cards{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:520px){.cards{grid-template-columns:1fr;max-width:360px}}
+@media (max-width:640px){
+  .card--wide{grid-template-columns:1fr;gap:.6em;text-align:center}
+}
+@media (max-width:520px){
+  .cards{grid-template-columns:1fr;max-width:360px}
+  .card--wide{text-align:center}
+}
 
 /* ---- Notice (warm, emphasised instruction) ---- */
 .notice{
