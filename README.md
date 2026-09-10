@@ -19,7 +19,8 @@ gathering hosted by **Luisa Fernanda** and **Ali C. Hantal**, brought to you by
 | `specs.md` | Full site specification. Keep it current. |
 | `images/experience-prana-party.jpg` | Wide experiential photo below the hero. |
 | `images/prana-party-social.jpg` | 1200×630 social-share card (og:/twitter: image). |
-| `images/atbliss-foundation-logo.png` | @ Bliss Foundation footer logo (links to atbliss.org). |
+| `images/atbliss-foundation-logo-dark.png` | @ Bliss Foundation footer logo (links to atbliss.org). |
+| `images/love-your-wellth-logo.jpg` | "Love Your Wellth" partner logo in the footer panel (not yet linked). |
 | `images/host-*.jpg` | Host portraits. |
 | `images/hero-prana-party.jpg` | Old promo banner — no longer shown. |
 | `images/source/` | Original supplied graphics (not served). |
