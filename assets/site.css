@@ -586,8 +586,7 @@ a{color:var(--gold-deep)}
   display:flex;
   align-items:center;
   justify-content:center;
-  flex-wrap:wrap;
-  gap:16px clamp(24px,4.5vw,40px);
+  gap:clamp(18px,4vw,26px);
 }
 .footer__partner{
   display:inline-flex;
@@ -597,20 +596,14 @@ a{color:var(--gold-deep)}
 }
 a.footer__partner:hover{opacity:.72}
 a.footer__partner:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
-.footer__partner img{width:auto;height:74px}
-.footer__partner--badge img{height:74px}
-.footer__partners-div{
-  width:1px;align-self:center;height:52px;
-  background:rgba(244,240,228,.26);
-}
-@media (max-width:600px){
-  .footer__partner img,
-  .footer__partner--badge img{height:58px}
-}
-@media (max-width:400px){
-  .footer__partner img,
-  .footer__partner--badge img{height:48px}
-  .footer__partners-div{display:none}
+/* Sized by width so the two logos occupy roughly the same footprint
+   and the centred row actually looks centred. */
+.footer__partner img{width:92px;height:auto}
+.footer__partner--badge img{width:54px}
+.footer__partners-div{display:none}
+@media (max-width:360px){
+  .footer__partner img{width:80px}
+  .footer__partner--badge img{width:48px}
 }
 .footer__copy{font-size:.82rem;letter-spacing:.08em;opacity:.65;margin:0;line-height:1.7}
 .footer__copy-sep{white-space:nowrap}
