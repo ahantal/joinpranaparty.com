@@ -3,7 +3,7 @@
 Living spec for **JoinPranaParty.com**. Update this file whenever content, structure,
 or deployment changes.
 
-- **Last updated:** 2026-09-10
+- **Last updated:** 2026-09-12
 - **Live URL:** https://joinpranaparty.com/  ·  Prep page: https://joinpranaparty.com/prepare/
 - **Repo:** https://github.com/ahantal/joinpranaparty.com
 - **Status:** Live. Registration end-to-end still needs a real-device test (see [§12](#12-open-items)).
@@ -71,8 +71,10 @@ images/
   atbliss-foundation-logo.png  @ Bliss Foundation footer logo — white text + gold mark, transparent
   love-your-wellth-logo.png    "Love Your Wellth" footer logo — transparent, navy text lightened to cream
   hero-prana-party.jpg         Old promo banner — no longer shown on the page
-  host-luisa-fernanda.jpg / host-ali-hantal.jpg   Host portraits
-  source/                      Originals kept for reference (not served)
+  host-luisa-fernanda.jpg / host-ali-hantal.jpg   Host portraits — 723×723, pre-cropped
+                                square and centered on each host's face (not relying on
+                                object-fit:cover's default 50/50 crop; see §4.7)
+  source/                      Originals + full-res uploads kept for reference (not served)
 Archives/                      Local backups — gitignored, not deployed
 ```
 
@@ -103,6 +105,13 @@ In document order:
 7. **Your Hosts** — *"Luisa Fernanda & Ali C. Hantal"*, two square portraits, script
    captions, then the line *"Two facilitators. One shared intention: creating a space to
    breathe, reconnect, and enjoy."* No bios.
+   Portraits are pre-cropped to 723×723 squares (not left to the browser's default
+   center-crop) — see file layout note above. When replacing a host photo: archive the
+   raw upload and the previous photo under `images/source/`, crop/center manually
+   (a quick pupil/nose measurement on a zoomed, gridded copy of the source beats
+   eyeballing the thumbnail — see git history around 2026-09-11/12 for the iterations
+   this took), save back to the same filename, and bump the `?v=` query on that `<img>`
+   src so browsers/CDN don't keep serving the cached old file.
 8. **Registration** (`#register`) — see [§6](#6-registration-form)–[§8](#8-confirmation--thank-you-state).
 9. **Footer** — see [§9](#9-footer).
 
@@ -200,15 +209,15 @@ clears the flag and restores the form.
 
 1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Friday, September 18,
    2026 / 5:30 PM to 7:30 PM EDT / Online** · *Come as you are.* (script)
-2. **JOIN PRANA PARTY ON ZOOM** — gold **Join on Zoom** button, new tab. Hint:
+2. **HOW TO PREPARE →** link to `/prepare/` + *"A few simple things to know before we
+   breathe together."* — sits directly under "Come as you are.", above the Zoom button.
+3. **JOIN PRANA PARTY ON ZOOM** — gold **Join on Zoom** button, new tab. Hint:
    *"Save this page or add Prana Party to your calendar below so you'll have the Zoom
    link when it's time to join."*
-3. **ADD PRANA PARTY TO YOUR CALENDAR** — Google Calendar (template URL, new tab),
+4. **ADD PRANA PARTY TO YOUR CALENDAR** — Google Calendar (template URL, new tab),
    Apple Calendar (`/prana-party.ics`), Outlook (outlook.live.com deeplink, new tab).
    Google/Outlook hrefs are built in JS on success; each embeds the Zoom URL and the
    `/prepare/` URL in the description.
-4. **HOW TO PREPARE →** link to `/prepare/` + *"A few simple things to know before we
-   breathe together."*
 
 ### Calendar event details (also `prana-party.ics`)
 
@@ -299,6 +308,11 @@ Content is based on the supplied Somatic Breathwork Session Prep document.
    keeps the domain. `.ics` is served as `text/calendar`; `/prepare` 301s to `/prepare/`.
 2. Verify: `curl -sI https://joinpranaparty.com/` → 200; `/prepare/` → 200;
    `/prana-party.ics` → 200 `text/calendar`.
+3. **Cache-busting:** `assets/site.css` and any host photo are referenced with a
+   `?v=N` query string on both pages. Overwriting one of those files in place without
+   bumping its `?v=` leaves browsers/CDN serving the stale cached copy even though the
+   new bytes are live on the server — bump the version any time the file's *content*
+   changes (not just when the filename does).
 
 Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 
@@ -328,3 +342,6 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-10 | `/prepare/`: "Set Up Your Camera" merged into "What You'll Need" as a full-width horizontal 5th box; its own section removed. |
 | 2026-09-10 | `/prepare/`: "don't eat" window changed 2 hours → 1 hour. |
 | 2026-09-10 | Footer partner logos reworked: dropped the cream panel; @ Bliss back to the white-text transparent logo; Love Your Wellth from the supplied transparent version with its navy text lightened to cream; both small, side by side on the green. |
+| 2026-09-10 | Type-size pass: `.hero__come` +10%, `.lede .accent` +15%, `.footer__logo` +20% (then +10% more), `.footer__tag` +20%, `.footer__by` +10%. Briefly scoped the enlarged footer type to the home page only, then reverted to global (same on every page). |
+| 2026-09-11 | Home confirmation panel: moved "How to prepare →" up to sit directly under "Come as you are.", above the Join on Zoom button (was after the calendar row). |
+| 2026-09-11/12 | Replaced both host photos with new uploads, pre-cropped to 723×723 squares centered on each host's face (previously relied on the browser's default center-crop, which doesn't account for where the face actually sits in the source photo). Went through several rounds of recentering/re-zooming based on user feedback — final method: zoom into the source photo, measure the pupils/nose on a pixel grid, and set the crop from that instead of eyeballing the small thumbnail. Originals and full-res uploads archived under `images/source/`. |
