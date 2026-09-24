@@ -6,7 +6,7 @@ or deployment changes.
 - **Last updated:** 2026-09-23
 - **Live URL:** https://joinpranaparty.com/  ·  Prep page: https://joinpranaparty.com/prepare/
 - **Repo:** https://github.com/ahantal/joinpranaparty.com
-- **Status:** Live, set up for **Saturday, October 24, 2026** but not yet marketed (awaiting the business partner's approval); Zoom link and calendar buttons pending (see §8, Pending). **Changing the date, time, or Zoom link? Use the [event-update checklist](#16-event-update-checklist).** Open items: [§14](#14-open-items).
+- **Status:** Live, set up for **Friday, October 23, 2026** but not yet marketed (awaiting the business partner's approval); Zoom link and calendar buttons pending (see §8, Pending). **Changing the date, time, or Zoom link? Use the [event-update checklist](#16-event-update-checklist).** Open items: [§14](#14-open-items).
 
 Participant journey: **Discover → Understand → Trust → Register → Save → Prepare → Join.**
 
@@ -27,7 +27,7 @@ extra registration questions, or unrelated @ Bliss Foundation content.
 | --- | --- |
 | Name | **PRANA PARTY** |
 | Descriptor | **A Free Virtual Soma+IQ™ Breathwork Gathering** |
-| Date | **Saturday, October 24, 2026** (changed 2026-09-24 from Friday, September 18, 2026) |
+| Date | **Friday, October 23, 2026** (set 2026-09-24; briefly Saturday, October 24, before that; originally Friday, September 18, 2026) |
 | Time | **5:30 PM to 7:30 PM EDT** (UTC−4; 21:30–23:30 UTC). End time assumed unchanged at 7:30 PM (2 hours); confirm with the site owner. |
 | Location | Online via Zoom |
 | Price | Free |
@@ -143,7 +143,7 @@ Both hero/highlight CTAs smooth-scroll to `#register` (respects `prefers-reduced
 
 **Heading:** *Join the Prana Party*
 **Sub (two lines):** *Reserve your spot for our free virtual breathwork gathering on
-Saturday, October 24.* / *Register below and we'll give you everything you need to join
+Friday, October 23.* / *Register below and we'll give you everything you need to join
 the gathering.*
 **Above fields:** *Fields marked with \* are required.*
 
@@ -158,7 +158,7 @@ the gathering.*
 | acknowledgment checkbox \* | `participant_release` | checkbox | Yes — value `Agreed`, never pre-checked |
 
 Hidden inputs: `access_key` `c3595d27-6d11-4842-aa55-2113d1a27bac`,
-`subject` `Prana Party Registration - October 24, 2026`,
+`subject` `Prana Party Registration - October 23, 2026`,
 `from_name` `Prana Party Registration`, plus a `botcheck` honeypot (`display:none`).
 
 ### Participant Acknowledgment & Release (`#acknowledgment`)
@@ -209,7 +209,7 @@ security is attempted. Restricting it to registrants would need a different mech
 **Separated from the landing page 2026-09-24** so all three breathwork sites share one
 structure. A successful registration sets `localStorage.pranaPartyRegistered` and
 redirects to `/thankyou/`. An early script in `index.html`'s `<head>` sends returning
-registrants straight to `/thankyou/` until the event passes (`Date.now() ≤ 2026-10-24
+registrants straight to `/thankyou/` until the event passes (`Date.now() ≤ 2026-10-23
 23:30 UTC`), then clears the flag. `/thankyou/` shows the confirmation panel only when
 that flag is valid; otherwise a *"Not registered yet?"* card with a button to
 `/#register`. *"Registering for someone else? Start a new registration"* clears the
@@ -218,7 +218,7 @@ builders) now live in `thankyou/index.html`; **`EVENT.endMs` there must match
 `EVENT_END_MS` in `index.html` and `prepare/index.html`** (update all three for a new
 event). Minimal top bar and the shared footer, like `/prepare/`.
 
-1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Saturday, October 24,
+1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Saturday, October 23,
    2026 / 5:30 PM to 7:30 PM EDT / Online** · *Come as you are.* (script)
 **2026-09-24: blocks 2 (How to prepare link) and 3 (Join on Zoom) were removed** at the site owner's request; the full preparation guide is in the panel, and the Zoom link reaches registrants through the confirmation email and the calendar entries. Under the calendar buttons: *"The Zoom link is in your confirmation email."*; the preparation guide ends with *"This preparation guide is also included in your confirmation email."* Current order: confirmation → Add to Calendar → preparation guide → reset link. Historical list:
 
@@ -244,13 +244,13 @@ with `/prepare/`.
 ### Calendar event details (also `prana-party.ics`)
 
 - Title: **Prana Party: Free Virtual Soma+IQ™ Breathwork Gathering**
-- Start/End: `20261024T213000Z` / `20261024T233000Z` (UTC — renders correctly in any
+- Start/End: `20261023T213000Z` / `20261023T233000Z` (UTC — renders correctly in any
   timezone). Location: *Online via Zoom*.
 - Description: "Prana Party" / hosts line / **Join on Zoom:** + full Zoom URL /
   **Prepare for Prana Party:** + `https://joinpranaparty.com/prepare/` /
   "Breathe. Connect. Celebrate."
 
-### Pending: Zoom link for October 24 (as of 2026-09-24)
+### Pending: Zoom link for October 23 (as of 2026-09-24)
 
 The site is not being marketed yet (awaiting the business partner's approval). Until
 the new Zoom link arrives:
@@ -347,7 +347,7 @@ Content is based on the supplied Somatic Breathwork Session Prep document.
 
 - `<title>`: **Prana Party | Free Virtual Soma+IQ™ Breathwork Gathering**
 - Description: *Join Prana Party, a free virtual Soma+IQ™ breathwork gathering with
-  Luisa Fernanda and Ali C. Hantal on Saturday, October 24, 2026 from 5:30 PM to 7:30
+  Luisa Fernanda and Ali C. Hantal on Friday, October 23, 2026 from 5:30 PM to 7:30
   PM EDT.*
 - Open Graph + Twitter (`summary_large_image`); `og:image` / `twitter:image` =
   `https://joinpranaparty.com/images/prana-party-social.jpg` (1200×630, contains event
@@ -380,7 +380,7 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 
 ## 14. Open items
 
-- [ ] **New Zoom link for October 24**, then switch on the calendar buttons and the
+- [ ] **New Zoom link for October 23**, then switch on the calendar buttons and the
       prepare page's Zoom CTA (see §8, Pending).
 - [ ] **Web3Forms auto-reply** for this form (key `c3595d27-…`): not set up yet, although
       `/thankyou/` says the Zoom link and preparation guide are in the confirmation
@@ -418,6 +418,7 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-24 | Confirmation moved from an in-page panel on `index.html` to its own `/thankyou/` page (redirect on success, early redirect for returning registrants, not-registered fallback); event/calendar script moved with it; `site.css` v=13 (reset link style). Verified end to end in Chrome with a stubbed Web3Forms response. |
 | 2026-09-24 | Next event set to Saturday, October 24, 2026, 5:30 to 7:30 PM EDT across the home page (meta, OG/Twitter, JSON-LD, hero, highlight band, registration intro, email subject), `/thankyou/` (date + calendar constants), `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, and README. Calendar buttons disabled and the prepare page's Zoom CTA held back until the new Zoom link arrives (see §8, Pending). `site.css` v=14. The social-share image `images/prana-party-social.jpg` still shows the old date. |
 | 2026-09-24 | Spec update: status and open items refreshed for October 24; added the event-update checklist (§16). |
+| 2026-09-24 | Event moved from Saturday, October 24 to **Friday, October 23, 2026**, same time (5:30 to 7:30 PM EDT), in every place listed in §16 (home page meta/OG/Twitter/JSON-LD/hero/band/intro/subject, `/thankyou/` date and calendar constants, `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, README). Zoom link still pending; calendar buttons still off. |
 
 ## 16. Event-update checklist
 
@@ -428,7 +429,7 @@ of these together and verify each on the live site:
 
 1. **Form page `index.html`:** meta description, Open Graph and Twitter descriptions,
    JSON-LD `startDate`/`endDate`, hero `.hero__meta` (date, time), the "Ready" highlight
-   band (date, time), the registration intro ("…on Saturday, October 24."), the hidden
+   band (date, time), the registration intro ("…on Friday, October 23."), the hidden
    `subject` field, and `EVENT_END_MS` in the early-redirect script in `<head>`.
 2. **Thank-you page `thankyou/index.html`:** `.success__when` (date, time), the `EVENT`
    constants (`startUTC`, `endUTC`, `startLocal`, `endLocal`, `endMs`), `ZOOM_URL`
