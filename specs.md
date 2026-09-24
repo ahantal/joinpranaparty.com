@@ -209,6 +209,8 @@ clears the flag and restores the form.
 
 1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Friday, September 18,
    2026 / 5:30 PM to 7:30 PM EDT / Online** · *Come as you are.* (script)
+**2026-09-24: blocks 2 (How to prepare link) and 3 (Join on Zoom) were removed** at the site owner's request; the full preparation guide is in the panel, and the Zoom link reaches registrants through the confirmation email and the calendar entries. Under the calendar buttons: *"The Zoom link is in your confirmation email."*; the preparation guide ends with *"This preparation guide is also included in your confirmation email."* Current order: confirmation → Add to Calendar → preparation guide → reset link. Historical list:
+
 2. **HOW TO PREPARE →** link to `/prepare/` + *"A few simple things to know before we
    breathe together."* — sits directly under "Come as you are.", above the Zoom button.
 3. **JOIN PRANA PARTY ON ZOOM** — gold **Join on Zoom** button, new tab. Hint:
@@ -380,3 +382,4 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-11/12 | Replaced both host photos with new uploads, pre-cropped to 723×723 squares centered on each host's face (previously relied on the browser's default center-crop, which doesn't account for where the face actually sits in the source photo). Went through several rounds of recentering/re-zooming based on user feedback — final method: zoom into the source photo, measure the pupils/nose on a pixel grid, and set the crop from that instead of eyeballing the small thumbnail. Originals and full-res uploads archived under `images/source/`. |
 | 2026-09-23 | `/prepare/` rebuilt with the shared preparation content (same as atbliss.org and /breathewithme) and all dates/times removed; same preparation guide added to the home confirmation panel under Join on Zoom (`.success__prep` in `site.css`, cache-buster `?v=11`); auto-reply prep summary recorded in §10. |
 | 2026-09-24 | Confirmation panel: preparation guide moved below the calendar block (Join on Zoom → Add to Calendar → preparation). |
+| 2026-09-24 | Confirmation panel: removed the How to prepare link and the Join on Zoom block; added the Zoom-link-in-email note under the calendar and the "also included in your confirmation email" line after the preparation guide (`site.css` v=12). **Note:** no auto-reply is configured for this form yet, so these notes depend on setting one up. |

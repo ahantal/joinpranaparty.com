@@ -558,6 +558,12 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 .success__prep .stage{text-align:left}
 .success__prep .checklist{margin-top:16px}
 @media (max-width:520px){.success__prep .cards{grid-template-columns:1fr}}
+.success__zoom-note{font-size:1rem;color:var(--ink);line-height:1.6;margin:18px auto 0;max-width:42ch}
+.success__zoom-note strong{color:var(--green)}
+.success__prep-emailed{
+  margin:30px auto 0;padding-top:22px;border-top:1px solid var(--line);
+  font-size:.98rem;color:var(--ink);line-height:1.6;max-width:44ch;
+}
 
 /* ---- Minimal page header (prepare) ---- */
 .topbar{

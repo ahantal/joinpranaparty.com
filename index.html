@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Mulish:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=11">
+<link rel="stylesheet" href="/assets/site.css?v=12">
 
 <script type="application/ld+json">
 {
@@ -299,23 +299,13 @@
         </div>
 
         <div class="success__block">
-          <a class="link-arrow" href="/prepare/">How to prepare &rarr;</a>
-          <p class="success__hint">A few simple things to know before we breathe together.</p>
-        </div>
-
-        <div class="success__block">
-          <p class="eyebrow">Join Prana Party on Zoom</p>
-          <a class="btn btn--gold" id="zoom-link" href="#" target="_blank" rel="noopener noreferrer">Join on Zoom</a>
-          <p class="success__hint">Save this page or add Prana Party to your calendar below so you'll have the Zoom link when it's time to join.</p>
-        </div>
-
-        <div class="success__block">
           <p class="eyebrow">Add Prana Party to your calendar</p>
           <div class="cal-row">
             <a class="btn btn--outline" id="cal-google" href="#" target="_blank" rel="noopener noreferrer">Google Calendar</a>
             <a class="btn btn--outline" id="cal-apple" href="/prana-party.ics">Apple Calendar</a>
             <a class="btn btn--outline" id="cal-outlook" href="#" target="_blank" rel="noopener noreferrer">Outlook</a>
           </div>
+          <p class="success__zoom-note">The <strong>Zoom link</strong> is in your confirmation email.</p>
         </div>
         <!-- Preparation (same content as /prepare/, no date) -->
         <div class="success__block success__prep">
@@ -391,6 +381,7 @@
             <p><strong>Breathwork can create strong physical and emotional experiences.</strong> If you are pregnant or have a medical condition that could be affected by intensive breathwork, please consult a qualified healthcare professional before participating.</p>
           </div>
           <p style="margin-top:18px"><a class="link-arrow" href="#acknowledgment">Review Participant Acknowledgment &amp; Health Precautions &rarr;</a></p>
+          <p class="success__prep-emailed">This preparation guide is also included in your confirmation email.</p>
         </div>
 
 
@@ -493,7 +484,6 @@
   function clearError(){ statusEl.hidden = true; statusEl.textContent = ''; }
 
   function populateGatedLinks(){
-    document.getElementById('zoom-link').href = ZOOM_URL;
     document.getElementById('cal-google').href = googleCalUrl();
     document.getElementById('cal-outlook').href = outlookCalUrl();
   }
