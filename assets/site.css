@@ -546,6 +546,19 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
   font:inherit;color:var(--gold-deep);text-decoration:underline;
 }
 
+/* Preparation guide inside the success panel (same content as /prepare/).
+   The panel is narrow, so the grids collapse to fit it. */
+.success__prep{text-align:center}
+.success__prep .success__prep-head{margin-top:34px}
+.success__prep .cards{grid-template-columns:1fr 1fr;margin-top:16px}
+.success__prep .card--wide{grid-template-columns:1fr;gap:.6em;text-align:left}
+.success__prep .card{text-align:left}
+.success__prep .notice{margin-top:16px}
+.success__prep .stages{grid-template-columns:1fr;gap:18px;margin-top:16px;text-align:left}
+.success__prep .stage{text-align:left}
+.success__prep .checklist{margin-top:16px}
+@media (max-width:520px){.success__prep .cards{grid-template-columns:1fr}}
+
 /* ---- Minimal page header (prepare) ---- */
 .topbar{
   text-align:center;

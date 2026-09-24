@@ -3,7 +3,7 @@
 Living spec for **JoinPranaParty.com**. Update this file whenever content, structure,
 or deployment changes.
 
-- **Last updated:** 2026-09-12
+- **Last updated:** 2026-09-23
 - **Live URL:** https://joinpranaparty.com/  ·  Prep page: https://joinpranaparty.com/prepare/
 - **Repo:** https://github.com/ahantal/joinpranaparty.com
 - **Status:** Live. Registration end-to-end still needs a real-device test (see [§12](#12-open-items)).
@@ -219,6 +219,14 @@ clears the flag and restores the form.
    Google/Outlook hrefs are built in JS on success; each embeds the Zoom URL and the
    `/prepare/` URL in the description.
 
+**2026-09-23:** a preparation guide (`.success__prep`, eyebrow *"Before we breathe
+together"*) now sits between block 3 (Join on Zoom) and block 4 (calendar): the same
+content as `/prepare/` (What you'll need, Give your body some space, What to expect,
+A few minutes before, Listen to your body → `#acknowledgment`), with no date. Its
+grids are collapsed to fit the narrow panel by `.success__prep` overrides in
+`site.css` (stylesheet cache-buster bumped to `?v=11` on both pages). Keep it in sync
+with `/prepare/`.
+
 ### Calendar event details (also `prana-party.ics`)
 
 - Title: **Prana Party: Free Virtual Soma+IQ™ Breathwork Gathering**
@@ -258,26 +266,50 @@ No overflow at 320px.
 visual system as the landing page, shared `site.css`, same footer. Minimal top bar:
 "PRANA PARTY" wordmark → `/`.
 
-1. **Hero** — eyebrow *PREPARE FOR PRANA PARTY*, h1 *"A few simple things to know before
-   we breathe together."*, date + time, script line *"Find a comfortable space. Bring
-   your headphones. And come as you are."*
-2. **WHAT YOU'LL NEED** — 4 cards (A Comfortable Place to Lie Down · Headphones or
-   Earbuds · Zoom · A Quiet, Private Space) followed by a full-width horizontal 5th
-   box **Set Up Your Camera** (`.card--wide`): lie on your back, frame upper
-   body/chest/belly so the facilitator can observe and guide live; emphasised line
-   *"Please turn off Zoom background blur, virtual backgrounds, and other camera
-   background effects before we begin."*
-3. **GIVE YOUR BODY SOME SPACE** — notice: *"Please don't eat anything for 2 hours
-   before the session begins."* (warm, not alarming).
-4. **WHAT TO EXPECT** — 3 stages: **Arrive** (Introduction) · **Breathe** (Guided
-   Breathwork) · **Integrate** (Integration & Sharing). No 15/60/15 timing.
-5. **A FEW MINUTES BEFORE** — 7-item checklist, then *"Come as you are."* (script).
-6. **LISTEN TO YOUR BODY** — health reminder + link **"Review Participant Acknowledgment
-   & Health Precautions →"** to `/#acknowledgment` (release is not re-accepted here).
-7. **READY TO BREATHE?** — green band: date, *5:30 PM EDT*, **Join Prana Party on Zoom**
-   button (raw Zoom URL, new tab).
-8. **QUESTIONS BEFORE WE BEGIN?** — *"If you're unsure about anything or have questions
-   about preparing for the session, just reach out."* (no contact method invented).
+**Rebuilt 2026-09-23 with the shared preparation content** agreed by the site owner
+for every prepare page across joinpranaparty.com, atbliss.org, and
+atbliss.org/breathewithme (canonical list in the atbliss.org repo's `specatbliss.md`,
+`/prepare` section). **No date or time anywhere on the page**, so it never needs
+updating per event (the hidden `EVENT_END_MS` Zoom-reveal cutoff in the script is the
+only per-event value).
+
+1. **Hero**: eyebrow *PREPARE FOR PRANA PARTY*, h1 *"A few simple things to know before
+   we breathe together."*, script line *"Find a comfortable space. Bring your
+   headphones. And come as you are."* No date.
+2. **WHAT YOU'LL NEED**: 4 cards (Comfortable Clothing · A Comfortable Place to Lie
+   Down · Headphones or Earbuds · A Quiet, Private Space) + wide **Zoom & Your Camera**
+   card (camera check; frame chest and belly while lying down; emphasised note to turn
+   off background blur and virtual backgrounds).
+3. **GIVE YOUR BODY SOME SPACE**: *"Try not to eat a large meal 1 hour before the
+   session."* (the site owner's chosen wording).
+4. **WHAT TO EXPECT**: 3 stages with timing: **Arrive** (~15 min) · **Breathe** (~60
+   min, guided through Soma+IQ™ The Journey; activation, allowing, nothing forced) ·
+   **Share & Integrate** (~15 min).
+5. **A FEW MINUTES BEFORE**: 8-item checklist (adds turning off phone notifications and
+   joining a few minutes early), then *"Come as you are."* (script).
+6. **LISTEN TO YOUR BODY**: health reminder + link to `/#acknowledgment`.
+7. **READY TO BREATHE?**: green band, no date; CTA to `/#register` (becomes the Zoom
+   link for registered visitors).
+8. **QUESTIONS BEFORE WE BEGIN?**: unchanged.
+
+The same content is embedded in the home page's confirmation panel (see §8).
+
+**Auto-reply (Web3Forms, key `c3595d27-…`)**: should carry a short "How to prepare"
+summary and a link to `https://joinpranaparty.com/prepare/`:
+
+```
+How to prepare:
+- Wear loose, comfortable clothing.
+- Find a quiet, private space and a mat or comfortable surface where you can lie on your back.
+- Have headphones or earbuds ready.
+- Check that Zoom, your camera, and your audio work, and turn off background blur and virtual backgrounds.
+- Position your camera so your upper body can be seen while you lie down.
+- Try not to eat a large meal 1 hour before the session.
+- Turn off phone notifications and join a few minutes early.
+
+Full preparation guide:
+https://joinpranaparty.com/prepare/
+```
 
 Content is based on the supplied Somatic Breathwork Session Prep document.
 
@@ -345,3 +377,4 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-10 | Type-size pass: `.hero__come` +10%, `.lede .accent` +15%, `.footer__logo` +20% (then +10% more), `.footer__tag` +20%, `.footer__by` +10%. Briefly scoped the enlarged footer type to the home page only, then reverted to global (same on every page). |
 | 2026-09-11 | Home confirmation panel: moved "How to prepare →" up to sit directly under "Come as you are.", above the Join on Zoom button (was after the calendar row). |
 | 2026-09-11/12 | Replaced both host photos with new uploads, pre-cropped to 723×723 squares centered on each host's face (previously relied on the browser's default center-crop, which doesn't account for where the face actually sits in the source photo). Went through several rounds of recentering/re-zooming based on user feedback — final method: zoom into the source photo, measure the pupils/nose on a pixel grid, and set the crop from that instead of eyeballing the small thumbnail. Originals and full-res uploads archived under `images/source/`. |
+| 2026-09-23 | `/prepare/` rebuilt with the shared preparation content (same as atbliss.org and /breathewithme) and all dates/times removed; same preparation guide added to the home confirmation panel under Join on Zoom (`.success__prep` in `site.css`, cache-buster `?v=11`); auto-reply prep summary recorded in §10. |
