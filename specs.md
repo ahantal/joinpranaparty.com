@@ -219,8 +219,9 @@ clears the flag and restores the form.
    Google/Outlook hrefs are built in JS on success; each embeds the Zoom URL and the
    `/prepare/` URL in the description.
 
-**2026-09-23:** a preparation guide (`.success__prep`, eyebrow *"Before we breathe
-together"*) now sits between block 3 (Join on Zoom) and block 4 (calendar): the same
+**2026-09-23/24:** a preparation guide (`.success__prep`, eyebrow *"Before we breathe
+together"*) now sits after block 4 (calendar), so the order is Join on Zoom → Add to
+Calendar → preparation: the same
 content as `/prepare/` (What you'll need, Give your body some space, What to expect,
 A few minutes before, Listen to your body → `#acknowledgment`), with no date. Its
 grids are collapsed to fit the narrow panel by `.success__prep` overrides in
@@ -378,3 +379,4 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-11 | Home confirmation panel: moved "How to prepare →" up to sit directly under "Come as you are.", above the Join on Zoom button (was after the calendar row). |
 | 2026-09-11/12 | Replaced both host photos with new uploads, pre-cropped to 723×723 squares centered on each host's face (previously relied on the browser's default center-crop, which doesn't account for where the face actually sits in the source photo). Went through several rounds of recentering/re-zooming based on user feedback — final method: zoom into the source photo, measure the pupils/nose on a pixel grid, and set the crop from that instead of eyeballing the small thumbnail. Originals and full-res uploads archived under `images/source/`. |
 | 2026-09-23 | `/prepare/` rebuilt with the shared preparation content (same as atbliss.org and /breathewithme) and all dates/times removed; same preparation guide added to the home confirmation panel under Join on Zoom (`.success__prep` in `site.css`, cache-buster `?v=11`); auto-reply prep summary recorded in §10. |
+| 2026-09-24 | Confirmation panel: preparation guide moved below the calendar block (Join on Zoom → Add to Calendar → preparation). |
