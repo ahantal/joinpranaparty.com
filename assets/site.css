@@ -538,6 +538,7 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 .success__block{margin-top:30px;padding-top:28px;border-top:1px solid var(--line)}
 .success__hint{font-size:.85rem;color:var(--ink-soft);margin:14px auto 0;max-width:42ch;line-height:1.6}
 .cal-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.btn.is-disabled{opacity:.4;pointer-events:none;cursor:default}
 .success__reset{
   margin-top:26px;font-size:.8rem;color:var(--ink-soft);
 }

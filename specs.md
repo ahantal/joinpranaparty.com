@@ -27,8 +27,8 @@ extra registration questions, or unrelated @ Bliss Foundation content.
 | --- | --- |
 | Name | **PRANA PARTY** |
 | Descriptor | **A Free Virtual Soma+IQ™ Breathwork Gathering** |
-| Date | **Friday, September 18, 2026** |
-| Time | **5:30 PM to 7:30 PM EDT** (UTC−4; 21:30–23:30 UTC) |
+| Date | **Saturday, October 24, 2026** (changed 2026-09-24 from Friday, September 18, 2026) |
+| Time | **5:30 PM to 7:30 PM EDT** (UTC−4; 21:30–23:30 UTC). End time assumed unchanged at 7:30 PM (2 hours); confirm with the site owner. |
 | Location | Online via Zoom |
 | Price | Free |
 | Level | All levels welcome |
@@ -143,7 +143,7 @@ Both hero/highlight CTAs smooth-scroll to `#register` (respects `prefers-reduced
 
 **Heading:** *Join the Prana Party*
 **Sub (two lines):** *Reserve your spot for our free virtual breathwork gathering on
-Friday, September 18.* / *Register below and we'll give you everything you need to join
+Saturday, October 24.* / *Register below and we'll give you everything you need to join
 the gathering.*
 **Above fields:** *Fields marked with \* are required.*
 
@@ -158,7 +158,7 @@ the gathering.*
 | acknowledgment checkbox \* | `participant_release` | checkbox | Yes — value `Agreed`, never pre-checked |
 
 Hidden inputs: `access_key` `c3595d27-6d11-4842-aa55-2113d1a27bac`,
-`subject` `Prana Party Registration - September 18, 2026`,
+`subject` `Prana Party Registration - October 24, 2026`,
 `from_name` `Prana Party Registration`, plus a `botcheck` honeypot (`display:none`).
 
 ### Participant Acknowledgment & Release (`#acknowledgment`)
@@ -209,7 +209,7 @@ security is attempted. Restricting it to registrants would need a different mech
 **Separated from the landing page 2026-09-24** so all three breathwork sites share one
 structure. A successful registration sets `localStorage.pranaPartyRegistered` and
 redirects to `/thankyou/`. An early script in `index.html`'s `<head>` sends returning
-registrants straight to `/thankyou/` until the event passes (`Date.now() ≤ 2026-09-18
+registrants straight to `/thankyou/` until the event passes (`Date.now() ≤ 2026-10-24
 23:30 UTC`), then clears the flag. `/thankyou/` shows the confirmation panel only when
 that flag is valid; otherwise a *"Not registered yet?"* card with a button to
 `/#register`. *"Registering for someone else? Start a new registration"* clears the
@@ -218,7 +218,7 @@ builders) now live in `thankyou/index.html`; **`EVENT.endMs` there must match
 `EVENT_END_MS` in `index.html` and `prepare/index.html`** (update all three for a new
 event). Minimal top bar and the shared footer, like `/prepare/`.
 
-1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Friday, September 18,
+1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Saturday, October 24,
    2026 / 5:30 PM to 7:30 PM EDT / Online** · *Come as you are.* (script)
 **2026-09-24: blocks 2 (How to prepare link) and 3 (Join on Zoom) were removed** at the site owner's request; the full preparation guide is in the panel, and the Zoom link reaches registrants through the confirmation email and the calendar entries. Under the calendar buttons: *"The Zoom link is in your confirmation email."*; the preparation guide ends with *"This preparation guide is also included in your confirmation email."* Current order: confirmation → Add to Calendar → preparation guide → reset link. Historical list:
 
@@ -244,11 +244,27 @@ with `/prepare/`.
 ### Calendar event details (also `prana-party.ics`)
 
 - Title: **Prana Party: Free Virtual Soma+IQ™ Breathwork Gathering**
-- Start/End: `20260918T213000Z` / `20260918T233000Z` (UTC — renders correctly in any
+- Start/End: `20261024T213000Z` / `20261024T233000Z` (UTC — renders correctly in any
   timezone). Location: *Online via Zoom*.
 - Description: "Prana Party" / hosts line / **Join on Zoom:** + full Zoom URL /
   **Prepare for Prana Party:** + `https://joinpranaparty.com/prepare/` /
   "Breathe. Connect. Celebrate."
+
+### Pending: Zoom link for October 24 (as of 2026-09-24)
+
+The site is not being marketed yet (awaiting the business partner's approval). Until
+the new Zoom link arrives:
+- `thankyou/index.html`: `CALENDAR_READY = false`. The three calendar buttons are
+  greyed out (`.btn.is-disabled`, no `href`) with *"Calendar links will be available
+  here soon."*
+- `prepare/index.html`: `ZOOM_READY = false`, so "Ready to breathe?" stays a
+  registration link instead of turning into a Zoom link for registrants.
+- `ZOOM_URL` in both files and the URL in `prana-party.ics` still hold the **old
+  September 18 meeting** link.
+
+**When the link arrives:** base64-encode it into `ZOOM_URL` in `thankyou/index.html`
+and `prepare/index.html`, put it in `prana-party.ics` (URL and DESCRIPTION), set
+`CALENDAR_READY` and `ZOOM_READY` to `true`, and update the auto-reply text.
 
 ## 9. Footer (all pages)
 
@@ -331,7 +347,7 @@ Content is based on the supplied Somatic Breathwork Session Prep document.
 
 - `<title>`: **Prana Party | Free Virtual Soma+IQ™ Breathwork Gathering**
 - Description: *Join Prana Party, a free virtual Soma+IQ™ breathwork gathering with
-  Luisa Fernanda and Ali C. Hantal on Friday, September 18, 2026 from 5:30 PM to 7:30
+  Luisa Fernanda and Ali C. Hantal on Saturday, October 24, 2026 from 5:30 PM to 7:30
   PM EDT.*
 - Open Graph + Twitter (`summary_large_image`); `og:image` / `twitter:image` =
   `https://joinpranaparty.com/images/prana-party-social.jpg` (1200×630, contains event
@@ -395,3 +411,4 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-24 | Confirmation panel: preparation guide moved below the calendar block (Join on Zoom → Add to Calendar → preparation). |
 | 2026-09-24 | Confirmation panel: removed the How to prepare link and the Join on Zoom block; added the Zoom-link-in-email note under the calendar and the "also included in your confirmation email" line after the preparation guide (`site.css` v=12). **Note:** no auto-reply is configured for this form yet, so these notes depend on setting one up. |
 | 2026-09-24 | Confirmation moved from an in-page panel on `index.html` to its own `/thankyou/` page (redirect on success, early redirect for returning registrants, not-registered fallback); event/calendar script moved with it; `site.css` v=13 (reset link style). Verified end to end in Chrome with a stubbed Web3Forms response. |
+| 2026-09-24 | Next event set to Saturday, October 24, 2026, 5:30 to 7:30 PM EDT across the home page (meta, OG/Twitter, JSON-LD, hero, highlight band, registration intro, email subject), `/thankyou/` (date + calendar constants), `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, and README. Calendar buttons disabled and the prepare page's Zoom CTA held back until the new Zoom link arrives (see §8, Pending). `site.css` v=14. The social-share image `images/prana-party-social.jpg` still shows the old date. |
