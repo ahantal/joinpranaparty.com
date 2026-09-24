@@ -541,6 +541,7 @@ a.come-sub:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px}
 .success__reset{
   margin-top:26px;font-size:.8rem;color:var(--ink-soft);
 }
+.success__reset a{color:var(--gold-deep);text-decoration:underline}
 .success__reset button{
   background:none;border:0;padding:0;cursor:pointer;
   font:inherit;color:var(--gold-deep);text-decoration:underline;

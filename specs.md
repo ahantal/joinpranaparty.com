@@ -45,8 +45,11 @@ extra registration questions, or unrelated @ Bliss Foundation content.
 
 ## 3. Tech stack & architecture
 
-- **Two static HTML pages**, no build step, no framework, no dependencies:
-  `index.html` (landing) and `prepare/index.html` (served at `/prepare/`).
+- **Three static HTML pages**, no build step, no framework, no dependencies:
+  `index.html` (landing + registration), `thankyou/index.html` (confirmation, served at
+  `/thankyou/`), and `prepare/index.html` (served at `/prepare/`). Same page structure
+  as atbliss.org and atbliss.org/breathewithme: landing with form → separate thank-you
+  page → separate no-date prepare page.
 - **Shared stylesheet:** `assets/site.css` — all design tokens + components. Each page
   adds only a handful of inline style overrides. `index.html` also has one inline
   `<script>` (registration + calendar logic).
@@ -59,7 +62,8 @@ extra registration questions, or unrelated @ Bliss Foundation content.
 ### File layout
 
 ```
-index.html                     Landing page
+index.html                     Landing page + registration form
+thankyou/index.html            Confirmation page (/thankyou/)
 prepare/index.html             Preparation page  (/prepare/)
 assets/site.css                Shared styles for both pages
 prana-party.ics                Calendar file (Apple Calendar); embeds the Zoom URL
@@ -200,12 +204,19 @@ present). It also appears, by necessity, in **two publicly fetchable places**:
 `/prana-party.ics` and `/prepare/`. This is accepted (the brief is explicit): no fake
 security is attempted. Restricting it to registrants would need a different mechanism.
 
-## 8. Confirmation / thank-you state
+## 8. Confirmation / thank-you page (`thankyou/index.html`, served at `/thankyou/`)
 
-Replaces the form in place. Also shown on load when `localStorage.pranaPartyRegistered`
-is set and the event has not yet passed (`Date.now() ≤ 2026-09-18 23:30 UTC`); after
-that it self-clears. A *"Registering for someone else? Start a new registration"* link
-clears the flag and restores the form.
+**Separated from the landing page 2026-09-24** so all three breathwork sites share one
+structure. A successful registration sets `localStorage.pranaPartyRegistered` and
+redirects to `/thankyou/`. An early script in `index.html`'s `<head>` sends returning
+registrants straight to `/thankyou/` until the event passes (`Date.now() ≤ 2026-09-18
+23:30 UTC`), then clears the flag. `/thankyou/` shows the confirmation panel only when
+that flag is valid; otherwise a *"Not registered yet?"* card with a button to
+`/#register`. *"Registering for someone else? Start a new registration"* clears the
+flag and links to `/#register`. The event constants (`ZOOM_URL`, `EVENT`, calendar
+builders) now live in `thankyou/index.html`; **`EVENT.endMs` there must match
+`EVENT_END_MS` in `index.html` and `prepare/index.html`** (update all three for a new
+event). Minimal top bar and the shared footer, like `/prepare/`.
 
 1. **YOU'RE IN! 🎉** · *We're excited to breathe with you.* · **Friday, September 18,
    2026 / 5:30 PM to 7:30 PM EDT / Online** · *Come as you are.* (script)
@@ -239,7 +250,7 @@ with `/prepare/`.
   **Prepare for Prana Party:** + `https://joinpranaparty.com/prepare/` /
   "Breathe. Connect. Celebrate."
 
-## 9. Footer (both pages)
+## 9. Footer (all pages)
 
 Deep-green band, centered:
 
@@ -383,3 +394,4 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-23 | `/prepare/` rebuilt with the shared preparation content (same as atbliss.org and /breathewithme) and all dates/times removed; same preparation guide added to the home confirmation panel under Join on Zoom (`.success__prep` in `site.css`, cache-buster `?v=11`); auto-reply prep summary recorded in §10. |
 | 2026-09-24 | Confirmation panel: preparation guide moved below the calendar block (Join on Zoom → Add to Calendar → preparation). |
 | 2026-09-24 | Confirmation panel: removed the How to prepare link and the Join on Zoom block; added the Zoom-link-in-email note under the calendar and the "also included in your confirmation email" line after the preparation guide (`site.css` v=12). **Note:** no auto-reply is configured for this form yet, so these notes depend on setting one up. |
+| 2026-09-24 | Confirmation moved from an in-page panel on `index.html` to its own `/thankyou/` page (redirect on success, early redirect for returning registrants, not-registered fallback); event/calendar script moved with it; `site.css` v=13 (reset link style). Verified end to end in Chrome with a stubbed Web3Forms response. |

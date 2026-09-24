@@ -14,7 +14,8 @@ gathering hosted by **Luisa Fernanda** and **Ali C. Hantal**, brought to you by
 | --- | --- |
 | `index.html` | Landing page. One inline `<script>` (registration + calendar logic). |
 | `prepare/index.html` | Preparation page, served at `/prepare/`. |
-| `assets/site.css` | Shared styles for both pages — design tokens + all components. |
+| `thankyou/index.html` | Confirmation page, served at `/thankyou/` (registration redirects here). |
+| `assets/site.css` | Shared styles for all pages: design tokens + all components. |
 | `prana-party.ics` | Calendar file for "Add to Apple Calendar" (embeds the Zoom URL). |
 | `specs.md` | Full site specification. Keep it current. |
 | `images/experience-prana-party.jpg` | Wide experiential photo below the hero. |
@@ -32,10 +33,11 @@ Posts JSON to `https://api.web3forms.com/submit`. `access_key` is in the hidden 
 near the top of the `<form>` in `index.html`. Fields: `first_name`, `last_name`,
 `email`, `mobile_phone`, `participant_release` (`Agreed`), hidden `subject` /
 `from_name`, and a `botcheck` honeypot. Client-side validation → `Joining…` state →
-duplicate-submit guard → on success the form is replaced by the confirmation panel
-(Zoom button + Google/Apple/Outlook calendar + prepare link) and a
-`pranaPartyRegistered` localStorage flag keeps that panel on return visits until the
-event passes.
+duplicate-submit guard → on success a `pranaPartyRegistered` localStorage flag is set
+and the visitor is redirected to `/thankyou/` (confirmation, Google/Apple/Outlook
+calendar, preparation guide). Returning registrants who open the home page are sent
+to `/thankyou/` until the event passes; `/thankyou/` shows "Not registered yet?" to
+everyone else. Same structure as atbliss.org and atbliss.org/breathewithme.
 
 ## Zoom link
 
