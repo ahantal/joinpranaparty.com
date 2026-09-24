@@ -6,7 +6,7 @@ or deployment changes.
 - **Last updated:** 2026-09-23
 - **Live URL:** https://joinpranaparty.com/  ·  Prep page: https://joinpranaparty.com/prepare/
 - **Repo:** https://github.com/ahantal/joinpranaparty.com
-- **Status:** Live. Registration end-to-end still needs a real-device test (see [§12](#12-open-items)).
+- **Status:** Live, set up for **Saturday, October 24, 2026** but not yet marketed (awaiting the business partner's approval); Zoom link and calendar buttons pending (see §8, Pending). **Changing the date, time, or Zoom link? Use the [event-update checklist](#16-event-update-checklist).** Open items: [§14](#14-open-items).
 
 Participant journey: **Discover → Understand → Trust → Register → Save → Prepare → Join.**
 
@@ -380,10 +380,15 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 
 ## 14. Open items
 
-- [ ] **Real-device end-to-end test of registration.** Web3Forms/Cloudflare blocks
-      datacenter & headless traffic, so a live submit can't be verified from the build
-      environment. Submit once from a phone/laptop: confirm the confirmation panel, the
-      Zoom button, all three calendar buttons, and that the notification email arrives.
+- [ ] **New Zoom link for October 24**, then switch on the calendar buttons and the
+      prepare page's Zoom CTA (see §8, Pending).
+- [ ] **Web3Forms auto-reply** for this form (key `c3595d27-…`): not set up yet, although
+      `/thankyou/` says the Zoom link and preparation guide are in the confirmation
+      email. Needs the Pro plan; text should include date, time, Zoom link, and the
+      "How to prepare" summary in §10.
+- [ ] **Social-share image** `images/prana-party-social.jpg` still shows September 18.
+- [ ] **Real-device end-to-end test** of the new `/thankyou/` flow (verified in Chrome
+      against a local copy on 2026-09-24; not yet with a real submit).
 - [ ] If no email arrives, confirm the Web3Forms account email is **verified**.
 - [ ] Spot-check the `.ics` opens in Apple Calendar with the Zoom link embedded.
 - [ ] Confirm `https_enforced` in GitHub Pages settings.
@@ -412,3 +417,28 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-24 | Confirmation panel: removed the How to prepare link and the Join on Zoom block; added the Zoom-link-in-email note under the calendar and the "also included in your confirmation email" line after the preparation guide (`site.css` v=12). **Note:** no auto-reply is configured for this form yet, so these notes depend on setting one up. |
 | 2026-09-24 | Confirmation moved from an in-page panel on `index.html` to its own `/thankyou/` page (redirect on success, early redirect for returning registrants, not-registered fallback); event/calendar script moved with it; `site.css` v=13 (reset link style). Verified end to end in Chrome with a stubbed Web3Forms response. |
 | 2026-09-24 | Next event set to Saturday, October 24, 2026, 5:30 to 7:30 PM EDT across the home page (meta, OG/Twitter, JSON-LD, hero, highlight band, registration intro, email subject), `/thankyou/` (date + calendar constants), `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, and README. Calendar buttons disabled and the prepare page's Zoom CTA held back until the new Zoom link arrives (see §8, Pending). `site.css` v=14. The social-share image `images/prana-party-social.jpg` still shows the old date. |
+| 2026-09-24 | Spec update: status and open items refreshed for October 24; added the event-update checklist (§16). |
+
+## 16. Event-update checklist
+
+**Whenever the date, time, or Zoom link changes, first ask the site owner for every
+detail at once:** date (and weekday), start and end time (ET), the Zoom link, and
+whether marketing starts now (if not, keep the calendar buttons off). Then update all
+of these together and verify each on the live site:
+
+1. **Form page `index.html`:** meta description, Open Graph and Twitter descriptions,
+   JSON-LD `startDate`/`endDate`, hero `.hero__meta` (date, time), the "Ready" highlight
+   band (date, time), the registration intro ("…on Saturday, October 24."), the hidden
+   `subject` field, and `EVENT_END_MS` in the early-redirect script in `<head>`.
+2. **Thank-you page `thankyou/index.html`:** `.success__when` (date, time), the `EVENT`
+   constants (`startUTC`, `endUTC`, `startLocal`, `endLocal`, `endMs`), `ZOOM_URL`
+   (base64), and `CALENDAR_READY` (true only once the Zoom link is final).
+3. **Prepare page `prepare/index.html`:** `EVENT_END_MS`, `ZOOM_URL`, and `ZOOM_READY`.
+   No visible date on this page.
+4. **`prana-party.ics`:** `UID`, `DTSTART`, `DTEND`, and the Zoom URL in `URL` and
+   `DESCRIPTION`.
+5. **Social-share image** `images/prana-party-social.jpg` (the date is in the image).
+6. **Web3Forms auto-reply** (dashboard, not code): date, time, and Zoom link.
+7. **Zoom itself:** the meeting must exist at the new time.
+
+`EVENT_END_MS` (index, prepare) and `EVENT.endMs` (thankyou) must match.
