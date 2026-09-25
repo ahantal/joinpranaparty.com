@@ -283,7 +283,7 @@ How to prepare:
 - Find a quiet, private space and a mat or comfortable surface where you can lie on your back.
 - Have headphones or earbuds ready.
 - Check that Zoom, your camera, and your audio work, and turn off background blur and virtual backgrounds.
-- Position your camera so your upper body can be seen while you lie down.
+- Position your camera so your upper body and face can be seen while you lie down.
 - Try not to eat a large meal 1 hour before the session.
 - Turn off phone notifications and join a few minutes early.
 
@@ -365,7 +365,7 @@ How to prepare:
 - Find a quiet, private space and a mat or comfortable surface where you can lie on your back.
 - Have headphones or earbuds ready.
 - Check that Zoom, your camera, and your audio work, and turn off background blur and virtual backgrounds.
-- Position your camera so your upper body can be seen while you lie down.
+- Position your camera so your upper body and face can be seen while you lie down.
 - Try not to eat a large meal 1 hour before the session.
 - Turn off phone notifications and join a few minutes early.
 
