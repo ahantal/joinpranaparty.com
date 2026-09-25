@@ -6,7 +6,7 @@ or deployment changes.
 - **Last updated:** 2026-09-23
 - **Live URL:** https://joinpranaparty.com/  ·  Prep page: https://joinpranaparty.com/prepare/
 - **Repo:** https://github.com/ahantal/joinpranaparty.com
-- **Status:** Live, set up for **Friday, October 23, 2026** but not yet marketed (awaiting the business partner's approval); Zoom link and calendar buttons pending (see §8, Pending). **Changing the date, time, or Zoom link? Use the [event-update checklist](#16-event-update-checklist).** Open items: [§14](#14-open-items).
+- **Status:** Live, set up for **Friday, October 23, 2026**, Zoom link and calendar buttons live since 2026-09-25 (see §8). **Changing the date, time, or Zoom link? Use the [event-update checklist](#16-event-update-checklist).** Open items: [§14](#14-open-items).
 
 Participant journey: **Discover → Understand → Trust → Register → Save → Prepare → Join.**
 
@@ -250,21 +250,53 @@ with `/prepare/`.
   **Prepare for Prana Party:** + `https://joinpranaparty.com/prepare/` /
   "Breathe. Connect. Celebrate."
 
-### Pending: Zoom link for October 23 (as of 2026-09-24)
+### Zoom link and calendar (live since 2026-09-25)
 
-The site is not being marketed yet (awaiting the business partner's approval). Until
-the new Zoom link arrives:
-- `thankyou/index.html`: `CALENDAR_READY = false`. The three calendar buttons are
-  greyed out (`.btn.is-disabled`, no `href`) with *"Calendar links will be available
-  here soon."*
-- `prepare/index.html`: `ZOOM_READY = false`, so "Ready to breathe?" stays a
-  registration link instead of turning into a Zoom link for registrants.
-- `ZOOM_URL` in both files and the URL in `prana-party.ics` still hold the **old
-  September 18 meeting** link.
+The October 23 Zoom link is in place: `ZOOM_URL` (base64) in `thankyou/index.html` and
+`prepare/index.html`, and the `URL`/`DESCRIPTION` of `prana-party.ics`. Calendar buttons
+are on (`CALENDAR_READY = true`) and the prepare page's "Ready to breathe?" button turns
+into the Zoom link for registered visitors (`ZOOM_READY = true`). For a future event
+whose link isn't known yet, set both back to `false`.
 
-**When the link arrives:** base64-encode it into `ZOOM_URL` in `thankyou/index.html`
-and `prepare/index.html`, put it in `prana-party.ics` (URL and DESCRIPTION), set
-`CALENDAR_READY` and `ZOOM_READY` to `true`, and update the auto-reply text.
+**Auto-reply text (Web3Forms dashboard, form key `c3595d27-…`), drafted 2026-09-25, "we" voice:**
+
+- From Name: `Prana Party`
+- Subject: `You're in: Prana Party, Friday, October 23`
+- Intro text:
+
+```
+You're in!
+
+We're excited to breathe with you.
+
+Date: Friday, October 23, 2026
+Time: 5:30 PM to 7:30 PM EDT
+Online via Zoom
+
+Join on Zoom:
+https://us02web.zoom.us/j/83428358590?pwd=v2t4Lq0LtSc3IpX0EaN077d9mc6G2v.1
+
+Prana Party is a free virtual Soma+IQ™ breathwork gathering hosted by Luisa Fernanda and Ali C. Hantal.
+
+How to prepare:
+- Wear loose, comfortable clothing.
+- Find a quiet, private space and a mat or comfortable surface where you can lie on your back.
+- Have headphones or earbuds ready.
+- Check that Zoom, your camera, and your audio work, and turn off background blur and virtual backgrounds.
+- Position your camera so your upper body can be seen while you lie down.
+- Try not to eat a large meal 1 hour before the session.
+- Turn off phone notifications and join a few minutes early.
+
+Full preparation guide:
+https://joinpranaparty.com/prepare/
+
+Come as you are.
+
+Breathe. Connect. Celebrate.
+
+Prana Party
+joinpranaparty.com
+```
 
 ## 9. Footer (all pages)
 
@@ -380,9 +412,9 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 
 ## 14. Open items
 
-- [ ] **New Zoom link for October 23**, then switch on the calendar buttons and the
-      prepare page's Zoom CTA (see §8, Pending).
-- [ ] **Web3Forms auto-reply** for this form (key `c3595d27-…`): not set up yet, although
+- [x] **Zoom link for October 23**: added 2026-09-25; calendar buttons and the prepare
+      page's Zoom CTA switched on.
+- [ ] **Web3Forms auto-reply** for this form (key `c3595d27-…`): text drafted in §8 (2026-09-25), to be pasted into the dashboard; until then, although
       `/thankyou/` says the Zoom link and preparation guide are in the confirmation
       email. Needs the Pro plan; text should include date, time, Zoom link, and the
       "How to prepare" summary in §10.
@@ -419,6 +451,7 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-24 | Next event set to Saturday, October 24, 2026, 5:30 to 7:30 PM EDT across the home page (meta, OG/Twitter, JSON-LD, hero, highlight band, registration intro, email subject), `/thankyou/` (date + calendar constants), `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, and README. Calendar buttons disabled and the prepare page's Zoom CTA held back until the new Zoom link arrives (see §8, Pending). `site.css` v=14. The social-share image `images/prana-party-social.jpg` still shows the old date. |
 | 2026-09-24 | Spec update: status and open items refreshed for October 24; added the event-update checklist (§16). |
 | 2026-09-24 | Event moved from Saturday, October 24 to **Friday, October 23, 2026**, same time (5:30 to 7:30 PM EDT), in every place listed in §16 (home page meta/OG/Twitter/JSON-LD/hero/band/intro/subject, `/thankyou/` date and calendar constants, `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, README). Zoom link still pending; calendar buttons still off. |
+| 2026-09-25 | October 23 Zoom link added (thank-you page, prepare page, `prana-party.ics`); calendar buttons and the prepare page's Zoom CTA switched on; auto-reply text drafted in §8. |
 
 ## 16. Event-update checklist
 

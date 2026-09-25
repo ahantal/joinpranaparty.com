@@ -191,7 +191,7 @@
      home page (localStorage flag set by the registration form). */
   var STORE_KEY = 'pranaPartyRegistered';
   var EVENT_END_MS = Date.UTC(2026, 9, 23, 23, 30, 0);
-  var ZOOM_URL = atob('aHR0cHM6Ly91czA2d2ViLnpvb20udXMvai84NTQ4MDk4MjM5OT9wd2Q9QThDSldjT0tVRTdRekJVd3FFMEt0NzFXYWF1UzFCLjE=');
+  var ZOOM_URL = atob('aHR0cHM6Ly91czAyd2ViLnpvb20udXMvai84MzQyODM1ODU5MD9wd2Q9djJ0NExxMEx0U2MzSXBYMEVhTjA3N2Q5bWM2RzJ2LjE=');
 
   var registered = false;
   try {
@@ -202,7 +202,7 @@
   } catch(e){ /* storage unavailable — treat as not registered */ }
 
   /* Set to true once the Zoom link for this event is final (ZOOM_URL above). */
-  var ZOOM_READY = false;
+  var ZOOM_READY = true;
 
   if(registered && ZOOM_READY){
     var cta = document.getElementById('join-cta');
