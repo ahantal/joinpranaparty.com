@@ -340,7 +340,7 @@ only per-event value).
    headphones. And come as you are."* No date.
 2. **WHAT YOU'LL NEED**: 4 cards (Comfortable Clothing · A Comfortable Place to Lie
    Down · Headphones or Earbuds · A Quiet, Private Space) + wide **Zoom & Your Camera**
-   card (camera check; frame chest and belly while lying down; emphasised note to turn
+   card (camera check; frame the face and upper body, chest and belly, while lying down; emphasised note to turn
    off background blur and virtual backgrounds).
 3. **GIVE YOUR BODY SOME SPACE**: *"Try not to eat a large meal 1 hour before the
    session."* (the site owner's chosen wording).
