@@ -418,7 +418,7 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
       `/thankyou/` says the Zoom link and preparation guide are in the confirmation
       email. Needs the Pro plan; text should include date, time, Zoom link, and the
       "How to prepare" summary in §10.
-- [ ] **Social-share image** `images/prana-party-social.jpg` still shows September 18.
+- [x] **Social-share image** `images/prana-party-social.jpg` regenerated 2026-09-25 for Friday, October 23 (October-only wording, see below).
 - [ ] **Real-device end-to-end test** of the new `/thankyou/` flow (verified in Chrome
       against a local copy on 2026-09-24; not yet with a real submit).
 - [ ] If no email arrives, confirm the Web3Forms account email is **verified**.
@@ -452,6 +452,7 @@ Commit attribution: `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`.
 | 2026-09-24 | Spec update: status and open items refreshed for October 24; added the event-update checklist (§16). |
 | 2026-09-24 | Event moved from Saturday, October 24 to **Friday, October 23, 2026**, same time (5:30 to 7:30 PM EDT), in every place listed in §16 (home page meta/OG/Twitter/JSON-LD/hero/band/intro/subject, `/thankyou/` date and calendar constants, `EVENT_END_MS`/`endMs` in all three pages, `prana-party.ics`, README). Zoom link still pending; calendar buttons still off. |
 | 2026-09-25 | October 23 Zoom link added (thank-you page, prepare page, `prana-party.ics`); calendar buttons and the prepare page's Zoom CTA switched on; auto-reply text drafted in §8. |
+| 2026-09-25 | **October-only edits** (Ali does not attend; photo and name stay): no Soma+IQ™ mention anywhere (title, meta, OG/Twitter, JSON-LD, hero, stage text, calendar text, social image; Soma+IQ™ box removed); breathing part 45 minutes (prepare and thank-you; "full 75 minutes"); event slot still 5:30 to 7:30 PM EDT. **Revert for November:** restore page files from git tag `pre-october-2026`; details in the local file `Prana_November_Revert.md`. |
 
 ## 16. Event-update checklist
 
